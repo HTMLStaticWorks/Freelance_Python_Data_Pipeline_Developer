@@ -245,22 +245,52 @@ html:not(.dark) .bg-\[\#0B1120\] {
 }
 
 html:not(.dark) .glass-card {
-  background: rgba(255, 255, 255, 0.8) !important;
-  border-color: rgba(15, 23, 42, 0.08) !important;
-  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(15, 23, 42, 0.22) !important;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.10) !important;
 }
 
 html:not(.dark) .glass-navbar {
-  background: rgba(255, 255, 255, 0.85) !important;
-  border-color: rgba(15, 23, 42, 0.06) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(15, 23, 42, 0.20) !important;
 }
 
 html:not(.dark) .border-slate-800,
 html:not(.dark) .border-slate-800\/80,
 html:not(.dark) .border-slate-850,
 html:not(.dark) .border-slate-700,
-html:not(.dark) .border-slate-700\/60 {
-  border-color: #E2E8F0 !important;
+html:not(.dark) .border-slate-700\/60,
+html:not(.dark) .border-slate-600 {
+  border-color: #94A3B8 !important;
+}
+
+/* Darker borders for all general bordered elements in light mode */
+html:not(.dark) [class*="border-"] {
+  border-color: #94A3B8;
+}
+
+/* CTA buttons and control buttons — darker outlines in light mode */
+html:not(.dark) a[class*="border"],
+html:not(.dark) button[class*="border"] {
+  border-color: #64748B !important;
+}
+
+/* Outline/ghost CTA buttons specifically */
+html:not(.dark) .border-cyan-400,
+html:not(.dark) .border-cyan-500,
+html:not(.dark) .border-blue-400,
+html:not(.dark) .border-blue-500,
+html:not(.dark) .border-indigo-400,
+html:not(.dark) .border-indigo-500 {
+  border-color: #1D4ED8 !important;
+}
+
+/* RTL / Theme toggle buttons borders */
+html:not(.dark) #rtl-toggle,
+html:not(.dark) #theme-toggle,
+html:not(.dark) #mobile-rtl-toggle,
+html:not(.dark) #mobile-theme-toggle {
+  border-color: #64748B !important;
 }
 
 html:not(.dark) .portfolio-filter-btn:not(.active),
