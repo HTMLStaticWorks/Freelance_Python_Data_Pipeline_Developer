@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies & Portfolio | Data Engineering Architect</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="View our portfolio of custom Python automation systems, high-concurrency APIs, event-driven scrapers, and data warehouse implementations with real ROI metrics.">
+  <meta name="keywords" content="Data Engineering Portfolio, ETL Projects, Python Scripting Showcase, API Integrations, Analytics Infrastructure Cases">
+  <link rel="canonical" href="portfolio.html">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0B1120',
+            'slate-black': '#111827',
+            'electric-blue': '#3B82F6',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Initial theme/direction check to prevent flash -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      const savedDir = localStorage.getItem('dir') || 'ltr';
+      document.documentElement.setAttribute('dir', savedDir);
+    })();
+  </script>
+  
+  <!-- Animate On Scroll (AOS) CDN -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom CSS overrides -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.321.0/dist/umd/lucide.min.js"></script>
+</head>
+<body class="bg-navy text-gray-100 font-sans selection:bg-indigo-500 selection:text-white antialiased">
+
+  <!-- Scroll Progress Bar -->
+
+
+  <!-- STICKY HEADER NAVBAR -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-2 group">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+            <i data-lucide="database" class="w-5 h-5 text-white"></i>
+          </div>
+          <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">
+            Py<span class="text-cyan-400">Pipeline</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 1</a>
+          <a href="home2.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 2</a>
+          <a href="about.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">About</a>
+          <a href="services.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Services</a>
+          <a href="portfolio.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Portfolio</a>
+          <a href="blog.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Blog</a>
+          <a href="contact.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Contact</a>
+        </nav>
+
+        <!-- Controls & CTA Button -->
+        <div class="hidden md:flex items-center space-x-4">
+          <!-- RTL Toggle -->
+          <button id="rtl-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-xs font-bold font-display uppercase tracking-wider text-gray-300 hover:text-white transition-colors flex items-center justify-center flex-shrink-0" title="Toggle RTL/LTR">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </button>
+          
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-gray-300 hover:text-white transition-colors flex items-center justify-center flex-shrink-0" title="Toggle Theme">
+            <i data-lucide="sun" class="w-4 h-4 theme-icon-sun"></i>
+            <i data-lucide="moon" class="w-4 h-4 theme-icon-moon hidden"></i>
+          </button>
+
+          <a href="quote.html" class="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-600 hover:to-indigo-600 text-white font-semibold text-sm rounded-lg shadow-md shadow-cyan-900/30 transition-all hover:-translate-y-0.5">
+            Get Project Quote
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-expanded="false">
+            <i id="menu-icon-open" data-lucide="menu" class="w-6 h-6"></i>
+            <i id="menu-icon-close" data-lucide="x" class="w-6 h-6 hidden"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col px-4 pt-2 pb-6 space-y-3 bg-[#0B1120]/95 backdrop-blur-lg border-b border-slate-800">
+      <a href="index.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 1</a>
+      <a href="home2.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 2</a>
+      <a href="about.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">About</a>
+      <a href="services.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Services</a>
+      <a href="portfolio.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-white bg-slate-800">Portfolio</a>
+      <a href="blog.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Blog</a>
+      <a href="contact.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Contact</a>
+      
+      <!-- Mobile toggles -->
+      <div class="flex items-center justify-between px-3 py-2 border-t border-slate-800 mt-2 pt-4">
+        <span class="text-sm font-medium text-gray-400 font-display uppercase tracking-wider">Settings</span>
+        <div class="flex space-x-2">
+          <button id="mobile-rtl-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 text-gray-300 flex items-center justify-center" title="Toggle RTL/LTR">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </button>
+          <button id="mobile-theme-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 text-gray-300 flex items-center justify-center">
+            <i data-lucide="sun" class="w-4 h-4 mobile-theme-icon-sun"></i>
+            <i data-lucide="moon" class="w-4 h-4 mobile-theme-icon-moon hidden"></i>
+          </button>
+        </div>
+      </div>
+      
+      <a href="quote.html" class="block w-full text-center px-4 py-3 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-600 hover:to-indigo-600 rounded-lg text-white font-medium shadow-md shadow-cyan-900/30">
+        Get Project Quote
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO HEADER & CONTROLS -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 grid-bg overflow-hidden border-b border-slate-800/80">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pulsing-glow"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <h1 class="text-4xl sm:text-5xl font-display font-bold text-white tracking-tight" data-aos="fade-up">
+        Case Studies & Projects
+      </h1>
+      <p class="mt-4 text-gray-400 text-lg max-w-xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+        A list of data pipelines, scrape engines, database upgrades, and API layers built to maximize operational capability.
+      </p>
+
+      <!-- SEARCH & FILTER HEADER -->
+      <div class="max-w-3xl mx-auto flex flex-col md:flex-row gap-4 items-center justify-between p-4 bg-slate-900/60 border border-slate-800 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+        <!-- Live search input -->
+        <div class="relative w-full md:w-72">
+          <input type="text" id="portfolio-search" placeholder="Search case studies..." class="w-full pl-10 pr-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 text-sm">
+          <i data-lucide="search" class="w-4 h-4 text-gray-500 absolute left-3 top-3.5"></i>
+        </div>
+
+        <!-- Filter category buttons -->
+        <div class="flex flex-wrap gap-2 justify-center w-full md:w-auto">
+          <button class="portfolio-filter-btn active px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-semibold font-display tracking-wider uppercase transition-colors" data-filter="all">All</button>
+          <button class="portfolio-filter-btn px-4 py-2 bg-slate-800 text-gray-300 rounded-lg text-xs font-semibold font-display tracking-wider uppercase hover:bg-slate-700 transition-colors" data-filter="etl">ETL</button>
+          <button class="portfolio-filter-btn px-4 py-2 bg-slate-800 text-gray-300 rounded-lg text-xs font-semibold font-display tracking-wider uppercase hover:bg-slate-700 transition-colors" data-filter="automation">Automation</button>
+          <button class="portfolio-filter-btn px-4 py-2 bg-slate-800 text-gray-300 rounded-lg text-xs font-semibold font-display tracking-wider uppercase hover:bg-slate-700 transition-colors" data-filter="apis">APIs</button>
+          <button class="portfolio-filter-btn px-4 py-2 bg-slate-800 text-gray-300 rounded-lg text-xs font-semibold font-display tracking-wider uppercase hover:bg-slate-700 transition-colors" data-filter="analytics">Analytics</button>
+          <button class="portfolio-filter-btn px-4 py-2 bg-slate-800 text-gray-300 rounded-lg text-xs font-semibold font-display tracking-wider uppercase hover:bg-slate-700 transition-colors" data-filter="warehouse">Data Warehousing</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS GRID -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+        
+        <!-- Case Study 1 -->
+        <div class="portfolio-item glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between transition-all duration-300 opacity-100" 
+             data-category="etl"
+             data-problem="A SaaS corporation was scraping CRM contacts, subscription statuses, and billing logs manually into localized files, leading to sync drifts, slow metrics loading, and lost invoice opportunities."
+             data-solution="Programmed a production-grade Python ETL system scheduled via Apache Airflow. Implemented structured schema validation using Pydantic, executing parallel REST queries and normalizations before writing results to a clean Snowflake analytics warehouse."
+             data-results="Eliminated manual script errors completely. Reports refresh automatically on a 6-hour cycle. Snowflake query performance optimized, reducing latency from minutes to milliseconds."
+             data-tech="Python, Apache Airflow, Snowflake, AWS ECS, Docker"
+             data-metrics="99.8%:Data Uptime, 18 hrs:Saved Weekly, Sub-second:Query Load"
+             data-aos="fade-up">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 bg-cyan-900/30 text-cyan-400 border border-cyan-800/40 rounded text-[10px] font-semibold uppercase tracking-wider font-display portfolio-tag">ETL</span>
+              <span class="text-[10px] text-gray-500">6-week Delivery</span>
+            </div>
+            <h3 class="portfolio-title text-xl font-bold font-display text-white mb-3">Multi-Channel SaaS Data Warehouse Orchestration</h3>
+            <p class="portfolio-desc text-gray-400 text-xs leading-relaxed mb-6">
+              Automating raw marketing APIs, CRM tables, and Stripe transactions into Snowflake using Airflow and Python Fargate tasks.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[10px] text-gray-500">Snowflake, Airflow</span>
+            <button class="portfolio-modal-trigger text-sm font-semibold text-cyan-400 hover:text-cyan-300">View Details &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="portfolio-item glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between transition-all duration-300 opacity-100" 
+             data-category="apis"
+             data-problem="An e-commerce logistics startup suffered stock level drifts across international Shopify warehouses. High inventory update delays caused stockouts and cancellations."
+             data-solution="Engineered a high-concurrency FastAPI webhook processor operating in Docker. Utilized Redis Queue backlogs to process bulk updates asynchronously, guaranteeing sub-second Shopify stock updates."
+             data-results="Inventory stock sync lag collapsed from 45 minutes to 300ms. Slashed manual cancellation costs and query delays, streamlining millions of stock updates."
+             data-tech="Python, FastAPI, Redis Queue, Docker, AWS ECS"
+             data-metrics="-94%:Sync Lag, 3.5M+:Daily Hits, $8.4K:Saved Monthly"
+             data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 bg-blue-900/30 text-blue-400 border border-blue-800/40 rounded text-[10px] font-semibold uppercase tracking-wider font-display portfolio-tag">APIs</span>
+              <span class="text-[10px] text-gray-500">4-week Delivery</span>
+            </div>
+            <h3 class="portfolio-title text-xl font-bold font-display text-white mb-3">Real-Time Inventory Alerting & API Processor</h3>
+            <p class="portfolio-desc text-gray-400 text-xs leading-relaxed mb-6">
+              Low-latency FastAPI and Redis pipeline updating Shopify store stock levels within 300 milliseconds.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[10px] text-gray-500">FastAPI, Redis</span>
+            <button class="portfolio-modal-trigger text-sm font-semibold text-blue-400 hover:text-blue-300">View Details &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="portfolio-item glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between transition-all duration-300 opacity-100" 
+             data-category="analytics"
+             data-problem="CTOs and data analysts at an agency couldn't evaluate customer acquisition metrics due to fragmented cookies across distinct marketing sites."
+             data-solution="Created a PySpark analytics engine deployed in AWS Glue. Aggregated serverless clicks, logs, and cookie transactions to map multi-touch customer paths."
+             data-results="Marketing attribution reports calculated automatically on a daily schedule, enabling complete analysis of channels and campaigns."
+             data-tech="Python, PySpark, AWS Glue, Athena, S3"
+             data-metrics="400M+:Log Entries, 100%:Attribution, $12K:Monthly Saved"
+             data-aos="fade-up" data-aos-delay="200">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 bg-indigo-900/30 text-indigo-400 border border-indigo-800/40 rounded text-[10px] font-semibold uppercase tracking-wider font-display portfolio-tag">Analytics</span>
+              <span class="text-[10px] text-gray-500">8-week Delivery</span>
+            </div>
+            <h3 class="portfolio-title text-xl font-bold font-display text-white mb-3">Enterprise Marketing Attribution Analytics Hub</h3>
+            <p class="portfolio-desc text-gray-400 text-xs leading-relaxed mb-6">
+              Processing 400M+ monthly clickstream logs via PySpark on AWS Glue to compile multi-touch marketing campaigns.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[10px] text-gray-500">PySpark, AWS Glue</span>
+            <button class="portfolio-modal-trigger text-sm font-semibold text-indigo-400 hover:text-indigo-350">View Details &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Case Study 4 -->
+        <div class="portfolio-item glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between transition-all duration-300 opacity-100" 
+             data-category="automation"
+             data-problem="An enterprise logistics retailer was tracking competitor e-commerce prices manually, delaying market adjustments and decreasing profit margins."
+             data-solution="Built an automated Scrapy-based web crawler farm scheduled to rotate proxy nodes, bypassing cloudflare blocks to scrape listing changes daily."
+             data-results="Normalized pricing database feeds automated email alerts, enabling automatic competitor price matching."
+             data-tech="Python, Scrapy, PostgreSQL, Docker, AWS EC2"
+             data-metrics="2.4M:Listings Scraped, 100%:Proxy Success, +8%:Profit Margin"
+             data-aos="fade-up">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 bg-cyan-900/30 text-cyan-400 border border-cyan-800/40 rounded text-[10px] font-semibold uppercase tracking-wider font-display portfolio-tag">Automation</span>
+              <span class="text-[10px] text-gray-500">5-week Delivery</span>
+            </div>
+            <h3 class="portfolio-title text-xl font-bold font-display text-white mb-3">Automated E-commerce Product Scraper Engine</h3>
+            <p class="portfolio-desc text-gray-400 text-xs leading-relaxed mb-6">
+              A high-availability scraping crawler farm collecting 2M+ competitor pricing points daily without proxy blocks.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[10px] text-gray-500">Scrapy, Postgres</span>
+            <button class="portfolio-modal-trigger text-sm font-semibold text-cyan-400 hover:text-cyan-300">View Details &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Case Study 5 -->
+        <div class="portfolio-item glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between transition-all duration-300 opacity-100" 
+             data-category="warehouse"
+             data-problem="Fintech transactional logs exceeded 800GB. Legacy unpartitioned PostgreSQL tables slowed query dashboards to 15+ seconds, timing out BI tools."
+             data-solution="Designed database table partitioning strategies. Programmed zero-downtime database migration using AWS DMS, and configured daily archiving."
+             data-results="Historical records migrated safely. Dashboard load speed collapsed from 14s to 400ms. Database sizes reduced significantly."
+             data-tech="PostgreSQL, AWS DMS, Terraform, AWS S3"
+             data-metrics="-85%:Query Time, 800GB:Data Cleaned, 0ms:Downtime"
+             data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 bg-indigo-900/30 text-indigo-400 border border-indigo-800/40 rounded text-[10px] font-semibold uppercase tracking-wider font-display portfolio-tag">Data Warehousing</span>
+              <span class="text-[10px] text-gray-500">7-week Delivery</span>
+            </div>
+            <h3 class="portfolio-title text-xl font-bold font-display text-white mb-3">Fintech Database Partitioning & Archival Migration</h3>
+            <p class="portfolio-desc text-gray-400 text-xs leading-relaxed mb-6">
+              Optimizing and migrating 800GB database tables into partitioned structures, reducing search times from 14 seconds to 400 milliseconds.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[10px] text-gray-500">PostgreSQL, AWS DMS</span>
+            <button class="portfolio-modal-trigger text-sm font-semibold text-indigo-400 hover:text-indigo-300">View Details &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Case Study 6 -->
+        <div class="portfolio-item glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between transition-all duration-300 opacity-100" 
+             data-category="warehouse"
+             data-problem="A healthtech provider had unorganized CSV/JSON logs in Amazon S3 from multiple tenants. Queries were slow, and there was no unified schema enforcement, risking HIPAA compliance audits and delaying dashboard indicators."
+             data-solution="Designed a secure Multi-Tenant Lakehouse using AWS Glue, Delta Lake, and Athena. Programmed a Python Spark pipeline that handles schema evolution, decrypts patient data at rest, and merges change-data-capture logs into optimized Parquet formats."
+             data-results="Enabled instant HIPAA-compliant SQL dashboards for B2B tenants. Data ingestion lag dropped from days to 15 minutes, with serverless Glue Spark costs optimized by 40%."
+             data-tech="Python, Delta Lake, AWS Glue, AWS Athena, PySpark, Terraform"
+             data-metrics="15 min:Ingest Inflow, 100%:HIPAA Secure, -40%:Glue Cost"
+             data-aos="fade-up" data-aos-delay="200">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 bg-indigo-900/30 text-indigo-400 border border-indigo-800/40 rounded text-[10px] font-semibold uppercase tracking-wider font-display portfolio-tag">Data Warehousing</span>
+              <span class="text-[10px] text-gray-500">8-week Delivery</span>
+            </div>
+            <h3 class="portfolio-title text-xl font-bold font-display text-white mb-3">Multi-Tenant HIPAA-Compliant Lakehouse Engine</h3>
+            <p class="portfolio-desc text-gray-400 text-xs leading-relaxed mb-6">
+              Building a secure, serverless cloud data lakehouse on AWS with schema enforcement and Delta Lake ACID transaction controls.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[10px] text-gray-500">Delta Lake, AWS Glue</span>
+            <button class="portfolio-modal-trigger text-sm font-semibold text-indigo-400 hover:text-indigo-300">View Details &rarr;</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL POPUP DETAIL VIEW -->
+  <div id="portfolio-modal-overlay" class="fixed inset-0 z-50 bg-[#0B1120]/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="glass-card w-full max-w-2xl rounded-2xl border border-slate-700/60 overflow-hidden shadow-2xl relative" data-aos="zoom-in" data-aos-duration="300">
+      
+      <!-- Close button -->
+      <button id="portfolio-modal-close" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-slate-900 hover:bg-slate-850 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <!-- Content -->
+      <div class="p-6 md:p-8">
+        <div class="flex items-center space-x-2.5 mb-2">
+          <span id="modal-category" class="px-2 py-0.5 bg-blue-900/30 text-blue-300 border border-blue-800/40 rounded text-[9px] font-semibold uppercase tracking-wider font-display">ETL</span>
+        </div>
+        
+        <h3 id="modal-title" class="text-2xl font-bold font-display text-white mb-6 pr-6">Project Title</h3>
+
+        <div class="space-y-6 text-sm text-gray-300">
+          <div>
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-1.5 font-display flex items-center gap-1.5">
+              <i data-lucide="alert-circle" class="w-4 h-4 text-red-400"></i> The Challenge / Problem
+            </h4>
+            <p id="modal-problem" class="leading-relaxed text-gray-400 text-xs">Challenge statement...</p>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-1.5 font-display flex items-center gap-1.5">
+              <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i> The Solution
+            </h4>
+            <p id="modal-solution" class="leading-relaxed text-gray-400 text-xs">Solution details...</p>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-1.5 font-display flex items-center gap-1.5">
+              <i data-lucide="trending-up" class="w-4 h-4 text-green-400"></i> Results & ROI Achieved
+            </h4>
+            <p id="modal-results" class="leading-relaxed text-gray-400 text-xs">Results metrics...</p>
+          </div>
+        </div>
+
+        <!-- Tech tags -->
+        <div class="mt-8 pt-6 border-t border-slate-800/80">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3 font-display">Technologies Integrated</h4>
+          <div class="flex flex-wrap gap-2" id="modal-tech">
+            <!-- Badges updated via JS -->
+          </div>
+        </div>
+
+        <!-- Metric grid -->
+        <div class="mt-6 pt-6 border-t border-slate-800/80">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3 font-display">Performance Metrics</h4>
+          <div class="grid grid-cols-3 gap-4" id="modal-metrics">
+            <!-- Blocks populated via JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA CONTACT SECTION -->
+  <section class="py-20 bg-[#111827] border-t border-slate-800 relative z-10 grid-bg">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+      <div class="absolute inset-0 w-full h-full bg-cyan-500/5 rounded-3xl blur-3xl pulsing-glow"></div>
+      
+      <div class="glass-card p-10 md:p-16 rounded-3xl border border-slate-800 relative z-10">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-6">
+          Ready to Automate Your Data Ecosystem?
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+          Book a free discovery call or submit your project brief to receive a customized pipeline implementation quote.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="quote.html" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 rounded-lg text-white font-semibold transition-all hover:-translate-y-0.5 shadow-lg shadow-indigo-950/40">
+            Submit Project Brief
+          </a>
+          <a href="services.html" class="px-8 py-4 bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg text-gray-300 hover:text-white font-semibold transition-all hover:-translate-y-0.5">
+            Explore Services Catalog
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy border-t border-slate-800/80 pt-20 pb-10 text-gray-400 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+        
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <a href="index.html" class="flex items-center space-x-2 mb-6 group">
+            <div class="w-8 h-8 rounded bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+              <i data-lucide="database" class="w-4 h-4 text-white"></i>
+            </div>
+            <span class="font-display font-bold text-lg text-white">Py<span class="text-cyan-400">Pipeline</span></span>
+          </a>
+          <p class="text-sm leading-relaxed mb-6 max-w-sm">
+            Expert freelance development specializing in Python automation, production-grade ETL pipelines, custom API connectors, and robust cloud data warehousing.
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://github.com" target="_blank" class="hover:text-white transition-colors" aria-label="GitHub"><i data-lucide="github" class="w-5 h-5"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="https://twitter.com" target="_blank" class="hover:text-white transition-colors" aria-label="Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+
+        <!-- Services Links -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-6">Services</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="services.html" class="hover:text-white transition-colors">ETL Pipelines</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors">Python Scripting</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors">Workflow Orchestration</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors">API Development</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-6">Quick Links</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="about.html" class="hover:text-white transition-colors">About Story</a></li>
+            <li><a href="portfolio.html" class="hover:text-white transition-colors">Case Studies</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors">Insights Blog</a></li>
+            <li><a href="quote.html" class="hover:text-white transition-colors">Get a Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Form -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-6">Newsletter</h4>
+          <p class="text-sm mb-4">Stay updated with Python engineering tips & ETL strategies.</p>
+          <form class="newsletter-form flex flex-col space-y-2">
+            <input type="email" placeholder="Your work email" required class="px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 text-sm">
+            <button type="submit" class="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition-colors">
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between text-xs gap-4">
+        <div>
+          &copy; 2026 PyPipeline. All rights reserved. Built for enterprises.
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

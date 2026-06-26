@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Python Development & Data Engineering Solutions</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore our professional services catalog: ETL pipeline development, data integration, data warehousing, python automation, API development, and reporting.">
+  <meta name="keywords" content="Data Pipeline Services, Python Automation Consultant, ETL Development, Data Integration, API Developer, Analytics Infrastructure">
+  <link rel="canonical" href="services.html">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0B1120',
+            'slate-black': '#111827',
+            'electric-blue': '#3B82F6',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Initial theme/direction check to prevent flash -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      const savedDir = localStorage.getItem('dir') || 'ltr';
+      document.documentElement.setAttribute('dir', savedDir);
+    })();
+  </script>
+  
+  <!-- Animate On Scroll (AOS) CDN -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom CSS overrides -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.321.0/dist/umd/lucide.min.js"></script>
+</head>
+<body class="bg-navy text-gray-100 font-sans selection:bg-indigo-500 selection:text-white antialiased">
+
+  <!-- Scroll Progress Bar -->
+
+
+  <!-- STICKY HEADER NAVBAR -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-2 group">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+            <i data-lucide="database" class="w-5 h-5 text-white"></i>
+          </div>
+          <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">
+            Py<span class="text-cyan-400">Pipeline</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 1</a>
+          <a href="home2.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 2</a>
+          <a href="about.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">About</a>
+          <a href="services.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Services</a>
+          <a href="portfolio.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Portfolio</a>
+          <a href="blog.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Blog</a>
+          <a href="contact.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Contact</a>
+        </nav>
+
+        <!-- Controls & CTA Button -->
+        <div class="hidden md:flex items-center space-x-4">
+          <!-- RTL Toggle -->
+          <button id="rtl-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-xs font-bold font-display uppercase tracking-wider text-gray-300 hover:text-white transition-colors flex items-center justify-center flex-shrink-0" title="Toggle RTL/LTR">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </button>
+          
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-gray-300 hover:text-white transition-colors flex items-center justify-center flex-shrink-0" title="Toggle Theme">
+            <i data-lucide="sun" class="w-4 h-4 theme-icon-sun"></i>
+            <i data-lucide="moon" class="w-4 h-4 theme-icon-moon hidden"></i>
+          </button>
+
+          <a href="quote.html" class="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-600 hover:to-indigo-600 text-white font-semibold text-sm rounded-lg shadow-md shadow-cyan-900/30 transition-all hover:-translate-y-0.5">
+            Get Project Quote
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-expanded="false">
+            <i id="menu-icon-open" data-lucide="menu" class="w-6 h-6"></i>
+            <i id="menu-icon-close" data-lucide="x" class="w-6 h-6 hidden"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col px-4 pt-2 pb-6 space-y-3 bg-[#0B1120]/95 backdrop-blur-lg border-b border-slate-800">
+      <a href="index.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 1</a>
+      <a href="home2.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 2</a>
+      <a href="about.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">About</a>
+      <a href="services.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Services</a>
+      <a href="portfolio.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Portfolio</a>
+      <a href="blog.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Blog</a>
+      <a href="contact.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Contact</a>
+      
+      <!-- Mobile toggles -->
+      <div class="flex items-center justify-between px-3 py-2 border-t border-slate-800 mt-2 pt-4">
+        <span class="text-sm font-medium text-gray-400 font-display uppercase tracking-wider">Settings</span>
+        <div class="flex space-x-2">
+          <button id="mobile-rtl-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 text-gray-300 flex items-center justify-center" title="Toggle RTL/LTR">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </button>
+          <button id="mobile-theme-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 text-gray-300 flex items-center justify-center">
+            <i data-lucide="sun" class="w-4 h-4 mobile-theme-icon-sun"></i>
+            <i data-lucide="moon" class="w-4 h-4 mobile-theme-icon-moon hidden"></i>
+          </button>
+        </div>
+      </div>
+      
+      <a href="quote.html" class="block w-full text-center px-4 py-3 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-600 hover:to-indigo-600 rounded-lg text-white font-medium shadow-md shadow-cyan-900/30">
+        Get Project Quote
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 grid-bg overflow-hidden border-b border-slate-800/80">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pulsing-glow"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <h1 class="text-4xl sm:text-5xl font-display font-bold text-white tracking-tight" data-aos="fade-up">
+        Services Catalog
+      </h1>
+      <p class="mt-4 text-gray-400 text-lg max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        From custom scraper scripts to multi-region cloud data warehousing. Choose engineering excellence.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES LISTING SECTION -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- 1. ETL Pipeline Development -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 flex flex-col justify-between" data-aos="fade-up">
+          <div>
+            <div class="flex items-center space-x-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+                <i data-lucide="git-merge" class="w-6 h-6"></i>
+              </div>
+              <h2 class="text-xl font-bold font-display text-white">1. ETL Pipeline Development</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+              Design and integration of production-grade Extract, Transform, and Load scripts that collect inputs from varied channels, clean inconsistencies, and write results to centralized storage.
+            </p>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Key Deliverables</h4>
+              <ul class="space-y-1.5 text-xs text-gray-400">
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-cyan-400 mr-1.5"></i> Clean Python source code with test models</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-cyan-400 mr-1.5"></i> Custom schemas & automated normalizers</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-cyan-400 mr-1.5"></i> Database write & validation triggers</li>
+              </ul>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Business Value</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Guarantees high-integrity datasets, reduces latency drift, and ensures dashboards always show accurate numbers.
+              </p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-slate-800/80 flex justify-between items-center flex-wrap gap-2">
+            <span class="text-[10px] bg-slate-900 px-2 py-1 text-gray-400 border border-slate-800 rounded font-mono">Python, Pandas, Docker</span>
+            <a href="quote.html?service=etl" class="text-sm font-semibold text-cyan-400 hover:text-cyan-300">Quote Service &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 2. Data Integration -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="flex items-center space-x-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                <i data-lucide="shuffle" class="w-6 h-6"></i>
+              </div>
+              <h2 class="text-xl font-bold font-display text-white">2. Data Integration</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+              Consolidating custom files, internal ERP states, CRM tables, and SaaS pipelines into a unified processing cycle.
+            </p>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Key Deliverables</h4>
+              <ul class="space-y-1.5 text-xs text-gray-400">
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-400 mr-1.5"></i> Custom JSON schema mappings</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-400 mr-1.5"></i> Stream-to-storage webhooks</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-400 mr-1.5"></i> Dynamic column-mapping controllers</li>
+              </ul>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Business Value</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Connects siloed business departments (sales, support, marketing) under a single consolidated reporting standard.
+              </p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-slate-800/80 flex justify-between items-center flex-wrap gap-2">
+            <span class="text-[10px] bg-slate-900 px-2 py-1 text-gray-400 border border-slate-800 rounded font-mono">FastAPI, Webhooks, PostgreSQL</span>
+            <a href="quote.html?service=integration" class="text-sm font-semibold text-blue-400 hover:text-blue-300">Quote Service &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 3. Data Warehousing -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 flex flex-col justify-between" data-aos="fade-up">
+          <div>
+            <div class="flex items-center space-x-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                <i data-lucide="database" class="w-6 h-6"></i>
+              </div>
+              <h2 class="text-xl font-bold font-display text-white">3. Data Warehousing</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+              Designing database structures, data vault schemas, indexing strategies, and partition parameters that enable rapid calculations across billions of entries.
+            </p>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Key Deliverables</h4>
+              <ul class="space-y-1.5 text-xs text-gray-400">
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-indigo-400 mr-1.5"></i> SQL schema definitions & indices</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-indigo-400 mr-1.5"></i> Snowflake/BigQuery environment templates</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-indigo-400 mr-1.5"></i> Automated backup and partition DAGs</li>
+              </ul>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Business Value</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Drastically slashes cloud warehousing expenses while boosting dashboard page speed from minutes to sub-seconds.
+              </p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-slate-800/80 flex justify-between items-center flex-wrap gap-2">
+            <span class="text-[10px] bg-slate-900 px-2 py-1 text-gray-400 border border-slate-800 rounded font-mono">Snowflake, PostgreSQL, dbt</span>
+            <a href="quote.html?service=warehouse" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300">Quote Service &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 4. Python Automation -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="flex items-center space-x-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+                <i data-lucide="terminal" class="w-6 h-6"></i>
+              </div>
+              <h2 class="text-xl font-bold font-display text-white">4. Python Automation</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+              Replacing manual copy-pasting, report preparation, data cleaning, and scraping cycles with standalone execution scripts.
+            </p>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Key Deliverables</h4>
+              <ul class="space-y-1.5 text-xs text-gray-400">
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-cyan-400 mr-1.5"></i> Executable Python CLI scripts</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-cyan-400 mr-1.5"></i> Custom scraping crawler systems</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-cyan-400 mr-1.5"></i> Cron/Task scheduling configs</li>
+              </ul>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Business Value</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Eliminates human errors and frees team schedules, saving dozens of operational hours every single week.
+              </p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-slate-800/80 flex justify-between items-center flex-wrap gap-2">
+            <span class="text-[10px] bg-slate-900 px-2 py-1 text-gray-400 border border-slate-800 rounded font-mono">Python, BeautifulSoup, Scrapy</span>
+            <a href="quote.html?service=automation" class="text-sm font-semibold text-cyan-400 hover:text-cyan-300">Quote Service &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 5. API Development -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 flex flex-col justify-between" data-aos="fade-up">
+          <div>
+            <div class="flex items-center space-x-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                <i data-lucide="link" class="w-6 h-6"></i>
+              </div>
+              <h2 class="text-xl font-bold font-display text-white">5. API Development</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+              Writing secure, low-latency REST and GraphQL APIs using FastAPI or Flask, enabling client software to query database structures instantly.
+            </p>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Key Deliverables</h4>
+              <ul class="space-y-1.5 text-xs text-gray-400">
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-400 mr-1.5"></i> Production FastAPI endpoints with OpenAPI docs</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-400 mr-1.5"></i> JWT Authentication & rate limiting</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-400 mr-1.5"></i> Unified SDK Python client libraries</li>
+              </ul>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Business Value</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Enables product teams to build clean user interfaces on top of high-integrity backend data systems.
+              </p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-slate-800/80 flex justify-between items-center flex-wrap gap-2">
+            <span class="text-[10px] bg-slate-900 px-2 py-1 text-gray-400 border border-slate-800 rounded font-mono">FastAPI, Pydantic, Redis</span>
+            <a href="quote.html?service=api" class="text-sm font-semibold text-blue-400 hover:text-blue-300">Quote Service &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 6. Cloud Data Engineering -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="flex items-center space-x-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                <i data-lucide="cloud" class="w-6 h-6"></i>
+              </div>
+              <h2 class="text-xl font-bold font-display text-white">6. Cloud Data Engineering</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+              Deploying scalable data flows on cloud architectures. Utilizing event-driven functions to process streams dynamically.
+            </p>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Key Deliverables</h4>
+              <ul class="space-y-1.5 text-xs text-gray-400">
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-indigo-400 mr-1.5"></i> AWS Lambda & ECS deployment configurations</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-indigo-400 mr-1.5"></i> Terraform infrastructure code files</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-indigo-400 mr-1.5"></i> CloudWatch monitoring & logging metrics</li>
+              </ul>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Business Value</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Ensures systems handle extreme payload spikes seamlessly, eliminating fixed server expenses through smart cloud scaling.
+              </p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-slate-800/80 flex justify-between items-center flex-wrap gap-2">
+            <span class="text-[10px] bg-slate-900 px-2 py-1 text-gray-400 border border-slate-800 rounded font-mono">AWS Lambda, ECS, Terraform</span>
+            <a href="quote.html?service=cloud" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300">Quote Service &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 7. Reporting Infrastructure -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 flex flex-col justify-between" data-aos="fade-up">
+          <div>
+            <div class="flex items-center space-x-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+                <i data-lucide="bar-chart-2" class="w-6 h-6"></i>
+              </div>
+              <h2 class="text-xl font-bold font-display text-white">7. Reporting Infrastructure</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+              Structuring high-integrity query views and materialized tables, enabling Business Intelligence utilities to retrieve statistics fluidly.
+            </p>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Key Deliverables</h4>
+              <ul class="space-y-1.5 text-xs text-gray-400">
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-cyan-400 mr-1.5"></i> Materialized views & query scripts</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-cyan-400 mr-1.5"></i> Database optimization routines</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-cyan-400 mr-1.5"></i> BI tool query credentials</li>
+              </ul>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Business Value</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Accelerates corporate decision-making by rendering reporting screens instantly without query timeouts.
+              </p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-slate-800/80 flex justify-between items-center flex-wrap gap-2">
+            <span class="text-[10px] bg-slate-900 px-2 py-1 text-gray-400 border border-slate-800 rounded font-mono">SQL, Postgres, Metabase</span>
+            <a href="quote.html?service=reporting" class="text-sm font-semibold text-cyan-400 hover:text-cyan-300">Quote Service &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 8. Analytics Enablement -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="flex items-center space-x-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                <i data-lucide="trending-up" class="w-6 h-6"></i>
+              </div>
+              <h2 class="text-xl font-bold font-display text-white">8. Analytics Enablement</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+              Consolidating messy raw logs into cleaned data model structures, priming data vectors for Machine Learning or prediction logic.
+            </p>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Key Deliverables</h4>
+              <ul class="space-y-1.5 text-xs text-gray-400">
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-400 mr-1.5"></i> Clean pandas cleaning schemas</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-400 mr-1.5"></i> Feature-engineered arrays & records</li>
+                <li class="flex items-center"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-400 mr-1.5"></i> Jupyter Notebook modeling scripts</li>
+              </ul>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 font-display">Business Value</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Bridges raw logging inputs with statistical models, enabling predictive suggestions and machine learning workflows.
+              </p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-slate-800/80 flex justify-between items-center flex-wrap gap-2">
+            <span class="text-[10px] bg-slate-900 px-2 py-1 text-gray-400 border border-slate-800 rounded font-mono">NumPy, SciPy, Jupyter</span>
+            <a href="quote.html?service=analytics" class="text-sm font-semibold text-blue-400 hover:text-blue-300">Quote Service &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA CONTACT SECTION -->
+  <section class="py-20 bg-[#111827] border-t border-slate-800 relative z-10 grid-bg">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+      <div class="absolute inset-0 w-full h-full bg-cyan-500/5 rounded-3xl blur-3xl pulsing-glow"></div>
+      
+      <div class="glass-card p-10 md:p-16 rounded-3xl border border-slate-800 relative z-10">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-6">
+          Ready to Build Resilient Pipelines?
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+          Book a technical alignment session or submit your data brief to check my availability for upcoming quarters.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="quote.html" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 rounded-lg text-white font-semibold transition-all hover:-translate-y-0.5 shadow-lg shadow-indigo-950/40">
+            Submit Project Brief
+          </a>
+          <a href="portfolio.html" class="px-8 py-4 bg-slate-900 border border-slate-850 hover:border-slate-700 rounded-lg text-gray-300 hover:text-white font-semibold transition-all hover:-translate-y-0.5">
+            Explore Case Studies
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy border-t border-slate-800/80 pt-20 pb-10 text-gray-400 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+        
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <a href="index.html" class="flex items-center space-x-2 mb-6 group">
+            <div class="w-8 h-8 rounded bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+              <i data-lucide="database" class="w-4 h-4 text-white"></i>
+            </div>
+            <span class="font-display font-bold text-lg text-white">Py<span class="text-cyan-400">Pipeline</span></span>
+          </a>
+          <p class="text-sm leading-relaxed mb-6 max-w-sm">
+            Expert freelance development specializing in Python automation, production-grade ETL pipelines, custom API connectors, and robust cloud data warehousing.
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://github.com" target="_blank" class="hover:text-white transition-colors" aria-label="GitHub"><i data-lucide="github" class="w-5 h-5"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="https://twitter.com" target="_blank" class="hover:text-white transition-colors" aria-label="Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+
+        <!-- Services Links -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-6">Services</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="services.html" class="hover:text-white transition-colors">ETL Pipelines</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors">Python Scripting</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors">Workflow Orchestration</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors">API Development</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-6">Quick Links</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="about.html" class="hover:text-white transition-colors">About Story</a></li>
+            <li><a href="portfolio.html" class="hover:text-white transition-colors">Case Studies</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors">Insights Blog</a></li>
+            <li><a href="quote.html" class="hover:text-white transition-colors">Get a Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Form -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-6">Newsletter</h4>
+          <p class="text-sm mb-4">Stay updated with Python engineering tips & ETL strategies.</p>
+          <form class="newsletter-form flex flex-col space-y-2">
+            <input type="email" placeholder="Your work email" required class="px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 text-sm">
+            <button type="submit" class="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition-colors">
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between text-xs gap-4">
+        <div>
+          &copy; 2026 PyPipeline. All rights reserved. Built for enterprises.
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

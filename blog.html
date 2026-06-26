@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights Blog | Python & Data Engineering Strategy</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Read engineering articles on Python development, ETL pipelines, database query tuning, scraper farms, and AWS serverless computing architectures.">
+  <meta name="keywords" content="Data Engineering Blog, Python Dev Articles, Apache Airflow Tips, Web Scraping Strategies, Database Tuning Insights">
+  <link rel="canonical" href="blog.html">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0B1120',
+            'slate-black': '#111827',
+            'electric-blue': '#3B82F6',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Initial theme/direction check to prevent flash -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      const savedDir = localStorage.getItem('dir') || 'ltr';
+      document.documentElement.setAttribute('dir', savedDir);
+    })();
+  </script>
+  
+  <!-- Animate On Scroll (AOS) CDN -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom CSS overrides -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.321.0/dist/umd/lucide.min.js"></script>
+</head>
+<body class="bg-navy text-gray-100 font-sans selection:bg-indigo-500 selection:text-white antialiased">
+
+  <!-- Scroll Progress Bar -->
+
+
+  <!-- STICKY HEADER NAVBAR -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-2 group">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+            <i data-lucide="database" class="w-5 h-5 text-white"></i>
+          </div>
+          <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">
+            Py<span class="text-cyan-400">Pipeline</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 1</a>
+          <a href="home2.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 2</a>
+          <a href="about.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">About</a>
+          <a href="services.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Services</a>
+          <a href="portfolio.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Portfolio</a>
+          <a href="blog.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Blog</a>
+          <a href="contact.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Contact</a>
+        </nav>
+
+        <!-- Controls & CTA Button -->
+        <div class="hidden md:flex items-center space-x-4">
+          <!-- RTL Toggle -->
+          <button id="rtl-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-xs font-bold font-display uppercase tracking-wider text-gray-300 hover:text-white transition-colors flex items-center justify-center flex-shrink-0" title="Toggle RTL/LTR">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </button>
+          
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-gray-300 hover:text-white transition-colors flex items-center justify-center flex-shrink-0" title="Toggle Theme">
+            <i data-lucide="sun" class="w-4 h-4 theme-icon-sun"></i>
+            <i data-lucide="moon" class="w-4 h-4 theme-icon-moon hidden"></i>
+          </button>
+
+          <a href="quote.html" class="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-600 hover:to-indigo-600 text-white font-semibold text-sm rounded-lg shadow-md shadow-cyan-900/30 transition-all hover:-translate-y-0.5">
+            Get Project Quote
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-expanded="false">
+            <i id="menu-icon-open" data-lucide="menu" class="w-6 h-6"></i>
+            <i id="menu-icon-close" data-lucide="x" class="w-6 h-6 hidden"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col px-4 pt-2 pb-6 space-y-3 bg-[#0B1120]/95 backdrop-blur-lg border-b border-slate-800">
+      <a href="index.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 1</a>
+      <a href="home2.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 2</a>
+      <a href="about.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">About</a>
+      <a href="services.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Services</a>
+      <a href="portfolio.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Portfolio</a>
+      <a href="blog.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-white bg-slate-800">Blog</a>
+      <a href="contact.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Contact</a>
+      
+      <!-- Mobile toggles -->
+      <div class="flex items-center justify-between px-3 py-2 border-t border-slate-800 mt-2 pt-4">
+        <span class="text-sm font-medium text-gray-400 font-display uppercase tracking-wider">Settings</span>
+        <div class="flex space-x-2">
+          <button id="mobile-rtl-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 text-gray-300 flex items-center justify-center" title="Toggle RTL/LTR">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </button>
+          <button id="mobile-theme-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 text-gray-300 flex items-center justify-center">
+            <i data-lucide="sun" class="w-4 h-4 mobile-theme-icon-sun"></i>
+            <i data-lucide="moon" class="w-4 h-4 mobile-theme-icon-moon hidden"></i>
+          </button>
+        </div>
+      </div>
+      
+      <a href="quote.html" class="block w-full text-center px-4 py-3 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-600 hover:to-indigo-600 rounded-lg text-white font-medium shadow-md shadow-cyan-900/30">
+        Get Project Quote
+      </a>
+    </div>
+  </header>
+
+  <!-- FEATURED POST BANNER -->
+  <section class="pt-32 pb-16 md:pt-40 md:pb-24 grid-bg overflow-hidden border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="glass-card p-6 md:p-10 rounded-3xl border border-slate-850 flex flex-col lg:flex-row gap-8 items-center" data-aos="fade-up">
+        
+        <!-- Graphic / Console mockup -->
+        <div class="w-full lg:w-1/2 bg-slate-950 p-6 rounded-2xl border border-slate-850 font-mono text-[11px] leading-relaxed text-cyan-400 glow-indigo select-none">
+          <div class="flex items-center space-x-1.5 border-b border-slate-850 pb-3 mb-4 text-gray-500 font-sans font-bold">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+            <span class="pl-2">airflow_dag_validator.py</span>
+          </div>
+          <div><span class="text-indigo-400">import</span> airflow <span class="text-indigo-400">from</span> DAG</div>
+          <div><span class="text-indigo-400">from</span> airflow.operators.python <span class="text-indigo-400">import</span> PythonOperator</div>
+          <div><span class="text-indigo-400">from</span> pydantic <span class="text-indigo-400">import</span> BaseModel, Field</div>
+          <div class="text-gray-500 mt-2"># Ensure schema integrity in staging run</div>
+          <div><span class="text-indigo-400">class</span> <span class="text-white">TransactionModel</span>(BaseModel):</div>
+          <div class="pl-4">transaction_id: <span class="text-white">str</span> = Field(..., min_length=12)</div>
+          <div class="pl-4">amount: <span class="text-white">float</span> = Field(..., gt=0.0)</div>
+          <div class="pl-4">timestamp: <span class="text-white">int</span></div>
+          <div class="text-gray-500 mt-2"># Pipeline tasks running smoothly...</div>
+          <div class="text-green-400">[INFO] DAG 'saas_billing_ingest' loaded successfully.</div>
+          <div class="text-green-400">[INFO] validation step: 0 errors detected. writing to warehouse.</div>
+        </div>
+
+        <!-- Featured text description -->
+        <div class="w-full lg:w-1/2 text-left">
+          <span class="px-2.5 py-1 bg-cyan-950/40 text-cyan-400 border border-cyan-800/40 rounded text-[10px] font-semibold uppercase tracking-wider font-display mb-4 inline-block">Featured Article</span>
+          <h2 class="text-2xl sm:text-3xl font-bold font-display text-white mb-4 leading-tight">
+            Designing Resilient Apache Airflow Pipelines: A Production Checklist
+          </h2>
+          <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+            Avoid silent pipeline failures, missing database tables, and API timeouts. Learn how we configure self-healing retries, Slack failure webhooks, and Great Expectations checks in production.
+          </p>
+          <div class="flex items-center justify-between text-xs text-gray-500">
+            <span>June 24, 2026 &bull; 8 min read</span>
+            <a href="#" class="text-sm font-semibold text-cyan-400 hover:text-cyan-300">Read Article &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH & CATEGORIES TABS -->
+  <section class="py-12 bg-[#111827] border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+        
+        <!-- Live search input -->
+        <div class="relative w-full md:w-80">
+          <input type="text" id="blog-search" placeholder="Search articles by title..." class="w-full pl-10 pr-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 text-sm">
+          <i data-lucide="search" class="w-4 h-4 text-gray-500 absolute left-3 top-3.5"></i>
+        </div>
+
+        <!-- Category tabs -->
+        <div class="flex flex-wrap gap-2 justify-center w-full md:w-auto">
+          <button class="blog-filter-btn active px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-semibold font-display tracking-wider uppercase transition-colors" data-filter="all">All</button>
+          <button class="blog-filter-btn px-4 py-2 bg-slate-800 text-gray-300 rounded-lg text-xs font-semibold font-display tracking-wider uppercase hover:bg-slate-700 transition-colors" data-filter="python">Python</button>
+          <button class="blog-filter-btn px-4 py-2 bg-slate-800 text-gray-300 rounded-lg text-xs font-semibold font-display tracking-wider uppercase hover:bg-slate-700 transition-colors" data-filter="etl">ETL</button>
+          <button class="blog-filter-btn px-4 py-2 bg-slate-800 text-gray-300 rounded-lg text-xs font-semibold font-display tracking-wider uppercase hover:bg-slate-700 transition-colors" data-filter="automation">Automation</button>
+          <button class="blog-filter-btn px-4 py-2 bg-slate-800 text-gray-300 rounded-lg text-xs font-semibold font-display tracking-wider uppercase hover:bg-slate-700 transition-colors" data-filter="cloud">Cloud</button>
+          <button class="blog-filter-btn px-4 py-2 bg-slate-800 text-gray-300 rounded-lg text-xs font-semibold font-display tracking-wider uppercase hover:bg-slate-700 transition-colors" data-filter="analytics">Analytics</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG FEED GRID -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Articles grid -->
+        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8" id="blog-grid">
+          
+          <!-- Post 1 -->
+          <div class="blog-post glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-category="python" data-aos="fade-up">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-2 py-0.5 bg-slate-800 border border-slate-750 text-gray-400 rounded text-[9px] font-semibold uppercase tracking-wider font-display">Python</span>
+                <span class="text-[9px] text-gray-500">June 21, 2026</span>
+              </div>
+              <h3 class="blog-title text-lg font-bold font-display text-white mb-3 hover:text-blue-400 transition-colors">
+                <a href="#">Polars vs Pandas: Benchmark Analysis in 2026</a>
+              </h3>
+              <p class="blog-excerpt text-gray-400 text-xs leading-relaxed mb-6">
+                Evaluating execution times, memory usage, and multi-threading capabilities on large data files.
+              </p>
+            </div>
+            <div class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-slate-850">
+              <span>6 min read</span>
+              <a href="#" class="text-sm font-semibold text-cyan-400 hover:text-cyan-300">Read &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Post 2 -->
+          <div class="blog-post glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-category="automation" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-2 py-0.5 bg-slate-800 border border-slate-750 text-gray-400 rounded text-[9px] font-semibold uppercase tracking-wider font-display">Automation</span>
+                <span class="text-[9px] text-gray-500">June 18, 2026</span>
+              </div>
+              <h3 class="blog-title text-lg font-bold font-display text-white mb-3 hover:text-blue-400 transition-colors">
+                <a href="#">Bypassing Bot Blockers: Python Scrapy Proxy Rotation</a>
+              </h3>
+              <p class="blog-excerpt text-gray-400 text-xs leading-relaxed mb-6">
+                How we construct proxy rotation middleware, mimic natural behaviors, and scrape competitor prices.
+              </p>
+            </div>
+            <div class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-slate-850">
+              <span>9 min read</span>
+              <a href="#" class="text-sm font-semibold text-blue-400 hover:text-blue-300">Read &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Post 3 -->
+          <div class="blog-post glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-category="cloud" data-aos="fade-up">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-2 py-0.5 bg-slate-800 border border-slate-750 text-gray-400 rounded text-[9px] font-semibold uppercase tracking-wider font-display">Cloud</span>
+                <span class="text-[9px] text-gray-500">June 14, 2026</span>
+              </div>
+              <h3 class="blog-title text-lg font-bold font-display text-white mb-3 hover:text-blue-400 transition-colors">
+                <a href="#">Serverless Warehousing on AWS Lambda & Snowflake</a>
+              </h3>
+              <p class="blog-excerpt text-gray-400 text-xs leading-relaxed mb-6">
+                Learn to configure light serverless scripts that trigger warehouse runs only when payloads land in S3.
+              </p>
+            </div>
+            <div class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-slate-850">
+              <span>7 min read</span>
+              <a href="#" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300">Read &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Post 4 -->
+          <div class="blog-post glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-category="etl" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-2 py-0.5 bg-slate-800 border border-slate-750 text-gray-400 rounded text-[9px] font-semibold uppercase tracking-wider font-display">ETL</span>
+                <span class="text-[9px] text-gray-500">June 10, 2026</span>
+              </div>
+              <h3 class="blog-title text-lg font-bold font-display text-white mb-3 hover:text-blue-400 transition-colors">
+                <a href="#">Integrating Schema Checks with Great Expectations</a>
+              </h3>
+              <p class="blog-excerpt text-gray-400 text-xs leading-relaxed mb-6">
+                Implementing automated schema checks to block null inputs before writing corrupted values to databases.
+              </p>
+            </div>
+            <div class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-slate-850">
+              <span>5 min read</span>
+              <a href="#" class="text-sm font-semibold text-cyan-400 hover:text-cyan-300">Read &rarr;</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar (Recent / Popular) -->
+        <div class="lg:col-span-4 space-y-12" data-aos="fade-left">
+          
+          <!-- Recent posts widget -->
+          <div>
+            <h3 class="text-xl font-bold font-display text-white mb-6 flex items-center gap-2">
+              <i data-lucide="clock" class="w-5 h-5 text-cyan-400"></i> Recent Posts
+            </h3>
+            <div class="space-y-4">
+              <a href="#" class="block p-4 rounded-lg bg-slate-900/40 border border-slate-800 hover:border-slate-750 transition-colors">
+                <div class="text-xs text-gray-500 mb-1">June 08, 2026</div>
+                <div class="text-sm font-bold text-white mb-1">Optimizing PostgreSQL Partition Indexes</div>
+                <p class="text-xs text-gray-400">Speeding up queries by 85% with monthly partition strategies.</p>
+              </a>
+              <a href="#" class="block p-4 rounded-lg bg-slate-900/40 border border-slate-800 hover:border-slate-750 transition-colors">
+                <div class="text-xs text-gray-500 mb-1">June 04, 2026</div>
+                <div class="text-sm font-bold text-white mb-1">FastAPI Concurrent Async Webhook Queues</div>
+                <p class="text-xs text-gray-400">Handling millions of updates under 300ms using Redis queues.</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Popular articles widget -->
+          <div>
+            <h3 class="text-xl font-bold font-display text-white mb-6 flex items-center gap-2">
+              <i data-lucide="award" class="w-5 h-5 text-indigo-400"></i> Popular Articles
+            </h3>
+            <ul class="space-y-4 text-sm">
+              <li class="flex items-start space-x-3">
+                <span class="text-2xl font-bold text-indigo-950 font-display">01</span>
+                <div>
+                  <a href="#" class="font-bold text-white hover:text-blue-400 transition-colors">Designing Enterprise SQL Warehouses</a>
+                  <div class="text-xs text-gray-500 mt-1">12,400+ views</div>
+                </div>
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="text-2xl font-bold text-indigo-950 font-display">02</span>
+                <div>
+                  <a href="#" class="font-bold text-white hover:text-blue-400 transition-colors">Python Scrapy Spider deployment checklists</a>
+                  <div class="text-xs text-gray-500 mt-1">9,200+ views</div>
+                </div>
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="text-2xl font-bold text-indigo-950 font-display">03</span>
+                <div>
+                  <a href="#" class="font-bold text-white hover:text-blue-400 transition-colors">Apache Airflow DAG Authoring Best Practices</a>
+                  <div class="text-xs text-gray-500 mt-1">8,100+ views</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER WIDGET CTA -->
+  <section class="py-20 bg-[#111827] border-t border-slate-800 relative z-10 grid-bg">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+      <div class="absolute inset-0 w-full h-full bg-cyan-500/5 rounded-3xl blur-3xl pulsing-glow"></div>
+      
+      <div class="glass-card p-10 md:p-16 rounded-3xl border border-slate-800 relative z-10 max-w-4xl mx-auto">
+        <h2 class="text-3xl font-display font-bold text-white mb-4">
+          Stay Updated with Python & Data Engineering Strategy
+        </h2>
+        <p class="text-gray-400 text-sm max-w-xl mx-auto mb-8">
+          Join 8,000+ software engineers, data architects, and analytics leaders who read our monthly technical write-ups.
+        </p>
+        <form class="newsletter-form flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input type="email" placeholder="Your work email" required class="flex-grow px-4 py-3 bg-slate-900 border border-slate-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 text-sm">
+          <button type="submit" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition-all shadow-md shadow-blue-900/30">
+            Subscribe Insights
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy border-t border-slate-800/80 pt-20 pb-10 text-gray-400 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+        
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <a href="index.html" class="flex items-center space-x-2 mb-6 group">
+            <div class="w-8 h-8 rounded bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+              <i data-lucide="database" class="w-4 h-4 text-white"></i>
+            </div>
+            <span class="font-display font-bold text-lg text-white">Py<span class="text-cyan-400">Pipeline</span></span>
+          </a>
+          <p class="text-sm leading-relaxed mb-6 max-w-sm">
+            Expert freelance development specializing in Python automation, production-grade ETL pipelines, custom API connectors, and robust cloud data warehousing.
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://github.com" target="_blank" class="hover:text-white transition-colors" aria-label="GitHub"><i data-lucide="github" class="w-5 h-5"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="https://twitter.com" target="_blank" class="hover:text-white transition-colors" aria-label="Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+
+        <!-- Services Links -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-6">Services</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="services.html" class="hover:text-white transition-colors">ETL Pipelines</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors">Python Scripting</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors">Workflow Orchestration</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors">API Development</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-6">Quick Links</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="about.html" class="hover:text-white transition-colors">About Story</a></li>
+            <li><a href="portfolio.html" class="hover:text-white transition-colors">Case Studies</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors">Insights Blog</a></li>
+            <li><a href="quote.html" class="hover:text-white transition-colors">Get a Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Form -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-6">Newsletter</h4>
+          <p class="text-sm mb-4">Stay updated with Python engineering tips & ETL strategies.</p>
+          <form class="newsletter-form flex flex-col space-y-2">
+            <input type="email" placeholder="Your work email" required class="px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 text-sm">
+            <button type="submit" class="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition-colors">
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between text-xs gap-4">
+        <div>
+          &copy; 2026 PyPipeline. All rights reserved. Built for enterprises.
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

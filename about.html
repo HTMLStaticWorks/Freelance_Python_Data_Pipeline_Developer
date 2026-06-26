@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About the Developer | PyPipeline Data Engineering Specialist</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Read about Alex, a senior freelance Python developer and data engineer. Learn about our development methodology, certifications, and career milestones.">
+  <meta name="keywords" content="Data Engineer Story, Python Developer Career, AWS Certified Solutions Architect, Apache Airflow Certification, Data Pipeline Methodology">
+  <link rel="canonical" href="about.html">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0B1120',
+            'slate-black': '#111827',
+            'electric-blue': '#3B82F6',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Initial theme/direction check to prevent flash -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      const savedDir = localStorage.getItem('dir') || 'ltr';
+      document.documentElement.setAttribute('dir', savedDir);
+    })();
+  </script>
+  
+  <!-- Animate On Scroll (AOS) CDN -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom CSS overrides -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.321.0/dist/umd/lucide.min.js"></script>
+</head>
+<body class="bg-navy text-gray-100 font-sans selection:bg-indigo-500 selection:text-white antialiased">
+
+  <!-- Scroll Progress Bar -->
+
+
+  <!-- STICKY HEADER NAVBAR -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-2 group">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+            <i data-lucide="database" class="w-5 h-5 text-white"></i>
+          </div>
+          <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">
+            Py<span class="text-cyan-400">Pipeline</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 1</a>
+          <a href="home2.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 2</a>
+          <a href="about.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">About</a>
+          <a href="services.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Services</a>
+          <a href="portfolio.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Portfolio</a>
+          <a href="blog.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Blog</a>
+          <a href="contact.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Contact</a>
+        </nav>
+
+        <!-- Controls & CTA Button -->
+        <div class="hidden md:flex items-center space-x-4">
+          <!-- RTL Toggle -->
+          <button id="rtl-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-xs font-bold font-display uppercase tracking-wider text-gray-300 hover:text-white transition-colors flex items-center justify-center flex-shrink-0" title="Toggle RTL/LTR">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </button>
+          
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-gray-300 hover:text-white transition-colors flex items-center justify-center flex-shrink-0" title="Toggle Theme">
+            <i data-lucide="sun" class="w-4 h-4 theme-icon-sun"></i>
+            <i data-lucide="moon" class="w-4 h-4 theme-icon-moon hidden"></i>
+          </button>
+
+          <a href="quote.html" class="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-600 hover:to-indigo-600 text-white font-semibold text-sm rounded-lg shadow-md shadow-cyan-900/30 transition-all hover:-translate-y-0.5">
+            Get Project Quote
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-expanded="false">
+            <i id="menu-icon-open" data-lucide="menu" class="w-6 h-6"></i>
+            <i id="menu-icon-close" data-lucide="x" class="w-6 h-6 hidden"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col px-4 pt-2 pb-6 space-y-3 bg-[#0B1120]/95 backdrop-blur-lg border-b border-slate-800">
+      <a href="index.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 1</a>
+      <a href="home2.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 2</a>
+      <a href="about.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">About</a>
+      <a href="services.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Services</a>
+      <a href="portfolio.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Portfolio</a>
+      <a href="blog.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Blog</a>
+      <a href="contact.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Contact</a>
+      
+      <!-- Mobile toggles -->
+      <div class="flex items-center justify-between px-3 py-2 border-t border-slate-800 mt-2 pt-4">
+        <span class="text-sm font-medium text-gray-400 font-display uppercase tracking-wider">Settings</span>
+        <div class="flex space-x-2">
+          <button id="mobile-rtl-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 text-gray-300 flex items-center justify-center" title="Toggle RTL/LTR">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </button>
+          <button id="mobile-theme-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 text-gray-300 flex items-center justify-center">
+            <i data-lucide="sun" class="w-4 h-4 mobile-theme-icon-sun"></i>
+            <i data-lucide="moon" class="w-4 h-4 mobile-theme-icon-moon hidden"></i>
+          </button>
+        </div>
+      </div>
+      
+      <a href="quote.html" class="block w-full text-center px-4 py-3 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-600 hover:to-indigo-600 rounded-lg text-white font-medium shadow-md shadow-cyan-900/30">
+        Get Project Quote
+      </a>
+    </div>
+  </header>
+
+  <!-- PAGE HERO HEADER -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 grid-bg overflow-hidden border-b border-slate-800/80">
+    <!-- Hero Background Image with Gradient Overlay for High Text Contrast -->
+    <div class="absolute inset-0 z-0 bg-cover bg-center opacity-15 select-none" style="background-image: url('images/hero_about.png');"></div>
+    <div class="absolute inset-0 z-0 hero-overlay-linear"></div>
+    <div class="absolute inset-0 z-0 hero-overlay-radial"></div>
+
+    <!-- Glowing background blur spots -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pulsing-glow z-0"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <h1 class="text-4xl sm:text-5xl font-display font-bold text-white tracking-tight" data-aos="fade-up">
+        About the Developer
+      </h1>
+      <p class="mt-4 text-gray-400 text-lg max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        The technical architect behind optimized ETL data lakes, automated workflows, and robust Python tools.
+      </p>
+    </div>
+  </section>
+
+  <!-- BIOGRAPHY / PROFILE STORY -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Story -->
+        <div class="lg:col-span-7" data-aos="fade-right">
+          <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mb-6">
+            Translating Complex Data Streams Into Actionable Business Analytics
+          </h2>
+          <div class="space-y-6 text-gray-400 text-sm sm:text-base leading-relaxed">
+            <p>
+              Hi, I'm Alex. I specialize in backend Python scripting and enterprise-level data orchestration. For the past 8+ years, I've designed and scaled ETL structures, microservice architectures, and database queries for fast-growing startups and established corporate networks.
+            </p>
+            <p>
+              My design ethos centers on simplicity and operational resilience. Rather than constructing fragile scripts that break under fluctuating API schemas, I implement self-healing, observable data structures featuring strict validations and alert mechanisms.
+            </p>
+            <p>
+              When businesses need to connect disjointed SaaS suites, migrate massive storage records, or replace manual report generation with automatic refreshes, I build the code systems that execute it flawlessly.
+            </p>
+          </div>
+        </div>
+
+        <!-- Technical Credentials Sidebar -->
+        <div class="lg:col-span-5" data-aos="fade-left">
+          <div class="glass-card p-8 rounded-2xl border border-slate-800 glow-indigo">
+            <h3 class="text-xl font-bold font-display text-white mb-6">Technical Core</h3>
+            
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-xs text-gray-400 font-display font-bold uppercase tracking-wider mb-1.5">
+                  <span>Python & Performance Optimization</span>
+                  <span>95%</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                  <div class="bg-cyan-500 h-full rounded-full" style="width: 95%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs text-gray-400 font-display font-bold uppercase tracking-wider mb-1.5">
+                  <span>Data Warehouse Architecture</span>
+                  <span>90%</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                  <div class="bg-indigo-500 h-full rounded-full" style="width: 90%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs text-gray-400 font-display font-bold uppercase tracking-wider mb-1.5">
+                  <span>Orchestration (Airflow/Prefect)</span>
+                  <span>88%</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                  <div class="bg-blue-600 h-full rounded-full" style="width: 88%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs text-gray-400 font-display font-bold uppercase tracking-wider mb-1.5">
+                  <span>Cloud Data Processing (AWS)</span>
+                  <span>85%</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                  <div class="bg-cyan-400 h-full rounded-full" style="width: 85%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Extra stats boxes -->
+            <div class="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-slate-850">
+              <div class="text-center p-3 bg-slate-950/60 rounded-lg">
+                <div class="text-2xl font-bold text-white font-display">8+ Yrs</div>
+                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold font-display">Experience</div>
+              </div>
+              <div class="text-center p-3 bg-slate-950/60 rounded-lg">
+                <div class="text-2xl font-bold text-white font-display">75+</div>
+                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold font-display">Projects Done</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGINEERING METHODOLOGY -->
+  <section class="py-24 bg-[#111827] border-y border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight" data-aos="fade-up">
+          Development Methodology & Principles
+        </h2>
+        <p class="mt-4 text-gray-400" data-aos="fade-up" data-aos-delay="100">
+          Clean architecture ensures pipelines don't fail silently. We write standard-compliant, resilient codebases.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Principle 1 -->
+        <div class="p-6 bg-[#0B1120] border border-slate-800/80 rounded-xl" data-aos="fade-up">
+          <div class="w-10 h-10 rounded bg-cyan-900/30 flex items-center justify-center text-cyan-400 mb-4">
+            <i data-lucide="shield-alert" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-white text-base mb-2">Self-Healing Protocols</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Integrating automated retry parameters, database transaction fallbacks, and schema type-casts to resolve intermittent API errors without stopping the run.
+          </p>
+        </div>
+
+        <!-- Principle 2 -->
+        <div class="p-6 bg-[#0B1120] border border-slate-800/80 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-10 h-10 rounded bg-blue-900/30 flex items-center justify-center text-blue-400 mb-4">
+            <i data-lucide="check-square" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-white text-base mb-2">Test-Driven Design</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Writing unit tests using PyTest to check dataframe normalization steps. Testing code against mocking suites before push to ensure staging integrity.
+          </p>
+        </div>
+
+        <!-- Principle 3 -->
+        <div class="p-6 bg-[#0B1120] border border-slate-800/80 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-10 h-10 rounded bg-indigo-900/30 flex items-center justify-center text-indigo-400 mb-4">
+            <i data-lucide="terminal" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-white text-base mb-2">PEP8 & Typed Coding</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Enforcing PEP8 style constraints, standard docstring formats, and explicit type checking to render code that is highly readable for internal developers.
+          </p>
+        </div>
+
+        <!-- Principle 4 -->
+        <div class="p-6 bg-[#0B1120] border border-slate-800/80 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-10 h-10 rounded bg-cyan-900/30 flex items-center justify-center text-cyan-400 mb-4">
+            <i data-lucide="git-branch" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-white text-base mb-2">Git Flow & Infrastructure</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Leveraging structured git branches, Pull Request evaluations, and Terraform code variables to version-control data structures alongside software applications.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER TIMELINE / MILESTONES -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute top-1/2 left-0 w-80 h-80 bg-cyan-500/5 rounded-full blur-[100px] pulsing-glow"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight" data-aos="fade-up">
+          Career Milestones
+        </h2>
+        <p class="mt-4 text-gray-400" data-aos="fade-up" data-aos-delay="100">
+          A history of engineering backend architectures and data environments.
+        </p>
+      </div>
+
+      <!-- Timeline layout -->
+      <div class="relative border-l border-slate-800 pl-8 space-y-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+        
+        <!-- Milestone 1 -->
+        <div class="relative">
+          <div class="absolute -left-12 top-1.5 w-8 h-8 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-cyan-400 font-bold text-xs font-display">
+            2024
+          </div>
+          <div class="font-display font-bold text-white text-lg">Freelance Data Architect & Python Specialist</div>
+          <div class="text-xs text-blue-400 mt-1 mb-3">Self-Employed (Remote)</div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Designing serverless processing routines, database query improvements, and custom dashboard APIs. Scaling ETL throughput from zero to millions of daily database writes.
+          </p>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="relative">
+          <div class="absolute -left-12 top-1.5 w-8 h-8 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-cyan-400 font-bold text-xs font-display">
+            2021
+          </div>
+          <div class="font-display font-bold text-white text-lg">Senior Data Infrastructure Engineer</div>
+          <div class="text-xs text-blue-400 mt-1 mb-3">Findex Growth SaaS (New York)</div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Maintained workflow orchestrations utilizing Apache Airflow and managed data warehousing structures in Snowflake. Refined legacy SQL statements, slashing cloud warehouse expenses by 32%.
+          </p>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="relative">
+          <div class="absolute -left-12 top-1.5 w-8 h-8 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-cyan-400 font-bold text-xs font-display">
+            2019
+          </div>
+          <div class="font-display font-bold text-white text-lg">Backend Python Developer</div>
+          <div class="text-xs text-blue-400 mt-1 mb-3">LaunchFlow Data Agency (San Francisco)</div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Constructed web indexing systems and consolidated dozens of third-party REST API streams into unified PostgreSQL tables. Designed custom scrapers yielding millions of weekly payload points.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS GRID & INDUSTRIES -->
+  <section class="py-24 bg-[#111827] border-y border-slate-800/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- Certifications -->
+        <div data-aos="fade-right">
+          <h3 class="text-2xl font-display font-bold text-white mb-8 flex items-center gap-2">
+            <i data-lucide="award" class="w-6 h-6 text-cyan-400"></i> Certifications
+          </h3>
+          <div class="space-y-4">
+            
+            <!-- Cert 1 -->
+            <div class="p-4 bg-slate-900/60 border border-slate-800/85 rounded-xl flex items-center space-x-4">
+              <div class="w-10 h-10 rounded bg-blue-900/20 flex items-center justify-center text-blue-400 font-bold font-display text-sm">
+                AWS
+              </div>
+              <div>
+                <div class="text-sm font-bold text-white font-display">AWS Certified Solutions Architect</div>
+                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mt-0.5">Amazon Web Services (Credentials Verified)</div>
+              </div>
+            </div>
+
+            <!-- Cert 2 -->
+            <div class="p-4 bg-slate-900/60 border border-slate-800/85 rounded-xl flex items-center space-x-4">
+              <div class="w-10 h-10 rounded bg-indigo-900/20 flex items-center justify-center text-indigo-400 font-bold font-display text-sm">
+                AIR
+              </div>
+              <div>
+                <div class="text-sm font-bold text-white font-display">Apache Airflow Certified DAG Author</div>
+                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mt-0.5">Astronomer Academy (Credentials Verified)</div>
+              </div>
+            </div>
+
+            <!-- Cert 3 -->
+            <div class="p-4 bg-slate-900/60 border border-slate-800/85 rounded-xl flex items-center space-x-4">
+              <div class="w-10 h-10 rounded bg-cyan-900/20 flex items-center justify-center text-cyan-400 font-bold font-display text-sm">
+                SNOW
+              </div>
+              <div>
+                <div class="text-sm font-bold text-white font-display">SnowPro Core Database Engineer</div>
+                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mt-0.5">Snowflake Inc (Credentials Verified)</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Industries Served -->
+        <div data-aos="fade-left" class="flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-display font-bold text-white mb-8 flex items-center gap-2">
+              <i data-lucide="globe" class="w-6 h-6 text-indigo-400"></i> Industries Served
+            </h3>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">
+              Our data architectures have optimized logistics workflows, synchronized SaaS metrics databases, and enabled FinTech firms to monitor investments.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="p-4 bg-slate-900/40 border border-slate-800/80 rounded-lg flex items-center space-x-3">
+                <i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i>
+                <span class="text-sm text-gray-300 font-medium">Growth SaaS</span>
+              </div>
+              <div class="p-4 bg-slate-900/40 border border-slate-800/80 rounded-lg flex items-center space-x-3">
+                <i data-lucide="trending-up" class="w-4 h-4 text-blue-400"></i>
+                <span class="text-sm text-gray-300 font-medium">FinTech</span>
+              </div>
+              <div class="p-4 bg-slate-900/40 border border-slate-800/80 rounded-lg flex items-center space-x-3">
+                <i data-lucide="shopping-cart" class="w-4 h-4 text-indigo-400"></i>
+                <span class="text-sm text-gray-300 font-medium">E-Commerce</span>
+              </div>
+              <div class="p-4 bg-slate-900/40 border border-slate-800/80 rounded-lg flex items-center space-x-3">
+                <i data-lucide="truck" class="w-4 h-4 text-cyan-400"></i>
+                <span class="text-sm text-gray-300 font-medium">Logistics & Supply</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA CONTACT SECTION -->
+  <section class="py-20 relative z-10 grid-bg">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+      <div class="absolute inset-0 w-full h-full bg-cyan-500/5 rounded-3xl blur-3xl pulsing-glow"></div>
+      
+      <div class="glass-card p-10 md:p-16 rounded-3xl border border-slate-800 relative z-10">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-6">
+          Ready to Build Resilient Pipelines?
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+          Book a technical alignment session or submit your data brief to check my availability for upcoming quarters.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="quote.html" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 rounded-lg text-white font-semibold transition-all hover:-translate-y-0.5 shadow-lg shadow-indigo-950/40">
+            Submit Project Brief
+          </a>
+          <a href="services.html" class="px-8 py-4 bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg text-gray-300 hover:text-white font-semibold transition-all hover:-translate-y-0.5">
+            Explore Services Catalog
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy border-t border-slate-800/80 pt-20 pb-10 text-gray-400 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+        
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <a href="index.html" class="flex items-center space-x-2 mb-6 group">
+            <div class="w-8 h-8 rounded bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+              <i data-lucide="database" class="w-4 h-4 text-white"></i>
+            </div>
+            <span class="font-display font-bold text-lg text-white">Py<span class="text-cyan-400">Pipeline</span></span>
+          </a>
+          <p class="text-sm leading-relaxed mb-6 max-w-sm">
+            Expert freelance development specializing in Python automation, production-grade ETL pipelines, custom API connectors, and robust cloud data warehousing.
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://github.com" target="_blank" class="hover:text-white transition-colors" aria-label="GitHub"><i data-lucide="github" class="w-5 h-5"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="https://twitter.com" target="_blank" class="hover:text-white transition-colors" aria-label="Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+
+        <!-- Services Links -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-6">Services</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="services.html" class="hover:text-white transition-colors">ETL Pipelines</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors">Python Scripting</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors">Workflow Orchestration</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors">API Development</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-6">Quick Links</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="about.html" class="hover:text-white transition-colors">About Story</a></li>
+            <li><a href="portfolio.html" class="hover:text-white transition-colors">Case Studies</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors">Insights Blog</a></li>
+            <li><a href="quote.html" class="hover:text-white transition-colors">Get a Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Form -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-6">Newsletter</h4>
+          <p class="text-sm mb-4">Stay updated with Python engineering tips & ETL strategies.</p>
+          <form class="newsletter-form flex flex-col space-y-2">
+            <input type="email" placeholder="Your work email" required class="px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 text-sm">
+            <button type="submit" class="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition-colors">
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between text-xs gap-4">
+        <div>
+          &copy; 2026 PyPipeline. All rights reserved. Built for enterprises.
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
