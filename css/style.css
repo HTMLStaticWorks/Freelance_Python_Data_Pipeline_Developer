@@ -533,4 +533,40 @@ html:not(.dark) #mobile-menu .nav-link:hover {
   color: #1D4ED8 !important;
 }
 
+/* Global Paragraph Font Size Scaling (~10% larger) */
+p {
+  font-size: 1.1rem; /* default paragraph size if no class is present */
+}
+
+p.text-xs {
+  font-size: 0.825rem !important; /* ~13.2px instead of 12px */
+}
+
+p.text-sm {
+  font-size: 0.96rem !important; /* ~15.4px instead of 14px */
+}
+
+p.text-base {
+  font-size: 1.1rem !important; /* ~17.6px instead of 16px */
+}
+
+p.text-lg {
+  font-size: 1.225rem !important; /* ~19.6px instead of 18px */
+}
+
+p.text-xl {
+  font-size: 1.375rem !important; /* ~22px instead of 20px */
+}
+
+/* Responsive Paragraph Font Size Scaling */
+@media (min-width: 640px) {
+  p.sm\:text-lg {
+    font-size: 1.225rem !important;
+  }
+  p.sm\:text-xl {
+    font-size: 1.375rem !important;
+  }
+}
+
+
 
