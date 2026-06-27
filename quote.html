@@ -74,7 +74,7 @@
         </a>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center space-x-8">
+        <nav class="hidden lg:flex items-center lg:space-x-4 xl:space-x-8">
           <a href="index.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 1</a>
           <a href="home2.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 2</a>
           <a href="about.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">About</a>
@@ -85,7 +85,7 @@
         </nav>
 
         <!-- Controls & CTA Button -->
-        <div class="hidden md:flex items-center space-x-4">
+        <div class="hidden lg:flex items-center space-x-4">
           <!-- RTL Toggle -->
           <button id="rtl-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-xs font-bold font-display uppercase tracking-wider text-gray-300 hover:text-white transition-colors flex items-center justify-center flex-shrink-0" title="Toggle RTL/LTR">
             <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
@@ -103,7 +103,7 @@
         </div>
 
         <!-- Mobile Menu Button -->
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-expanded="false">
             <i id="menu-icon-open" data-lucide="menu" class="w-6 h-6"></i>
             <i id="menu-icon-close" data-lucide="x" class="w-6 h-6 hidden"></i>
@@ -113,7 +113,7 @@
     </div>
 
     <!-- Mobile Navigation Panel -->
-    <div id="mobile-menu" class="hidden md:hidden flex-col px-4 pt-2 pb-6 space-y-3 bg-[#0B1120]/95 backdrop-blur-lg border-b border-slate-800">
+    <div id="mobile-menu" class="hidden lg:hidden flex-col px-4 pt-2 pb-6 space-y-3 bg-[#0B1120]/95 backdrop-blur-lg border-b border-slate-800">
       <a href="index.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 1</a>
       <a href="home2.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 2</a>
       <a href="about.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">About</a>
@@ -318,7 +318,7 @@
             <span>Do you work with fixed milestone rates or hourly retainers?</span>
             <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-cyan-400 transition-transform duration-200"></i>
           </button>
-          <div class="accordion-content bg-slate-900/20 text-xs text-gray-400">
+          <div class="accordion-content bg-slate-900/20 text-sm text-gray-400">
             <div class="px-6 pb-6 pt-2 leading-relaxed">
               I support both structures. For highly defined scopes of work (e.g. constructing an API scraper, migrating a relational database schema), I prepare a detailed fixed-price proposal broken into milestones. For ongoing architectural support, maintenance, or ad-hoc pipeline tweaks, I bill via weekly or monthly retainers.
             </div>
@@ -331,7 +331,7 @@
             <span>How do you handle pipeline handoffs and maintenance?</span>
             <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-cyan-400 transition-transform duration-200"></i>
           </button>
-          <div class="accordion-content bg-slate-900/20 text-xs text-gray-400">
+          <div class="accordion-content bg-slate-900/20 text-sm text-gray-400">
             <div class="px-6 pb-6 pt-2 leading-relaxed">
               Resiliency is built into the code. Every handoff includes comprehensive README documentations, detailed diagram sketches, automated test commands, and cloud variables setup. I also offer a 30-day post-launch warranty to fix any schema drifts or intermittent API snags, along with optional ongoing support agreements.
             </div>
@@ -344,7 +344,7 @@
             <span>Can you sign an NDA before we share API credentials?</span>
             <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-cyan-400 transition-transform duration-200"></i>
           </button>
-          <div class="accordion-content bg-slate-900/20 text-xs text-gray-400">
+          <div class="accordion-content bg-slate-900/20 text-sm text-gray-400">
             <div class="px-6 pb-6 pt-2 leading-relaxed">
               Yes. I prioritize data security and routinely sign standard mutual Non-Disclosure Agreements (NDAs) before auditing source codes, database structures, or endpoint payloads. We handle credentials securely using secret key vaults.
             </div>
@@ -357,7 +357,7 @@
             <span>Which cloud environments and database structures do you support?</span>
             <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-cyan-400 transition-transform duration-200"></i>
           </button>
-          <div class="accordion-content bg-slate-900/20 text-xs text-gray-400">
+          <div class="accordion-content bg-slate-900/20 text-sm text-gray-400">
             <div class="px-6 pb-6 pt-2 leading-relaxed">
               My core stack revolves around AWS (Amazon Web Services) and PostgreSQL. However, I have extensive deployment experience in Snowflake, Google BigQuery, Athena, MongoDB, Redis, and MySQL. I configure all systems utilizing Docker containers, guaranteeing portability to other cloud ecosystems (like Microsoft Azure or GCP).
             </div>
@@ -384,45 +384,45 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="200">
         
         <!-- Step 1 -->
-        <div class="p-6 bg-slate-900/40 border border-slate-850 rounded-xl text-center flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full bg-cyan-900/20 flex items-center justify-center text-cyan-450 font-bold font-display text-sm mb-4">
+        <div class="p-6 bg-slate-900/40 border border-slate-800 rounded-xl text-center flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full bg-cyan-900/20 flex items-center justify-center text-cyan-400 font-bold font-display text-sm mb-4">
             01
           </div>
-          <h4 class="font-display font-bold text-white text-sm mb-2">Discovery & Feasibility</h4>
-          <p class="text-xs text-gray-550 leading-relaxed">
+          <h4 class="font-display font-bold text-white text-base mb-2">Discovery & Feasibility</h4>
+          <p class="text-sm text-gray-400 leading-relaxed">
             Submit your brief, and we align on an introductory call to review data constraints, budget targets, and timeline capabilities.
           </p>
         </div>
 
         <!-- Step 2 -->
-        <div class="p-6 bg-slate-900/40 border border-slate-850 rounded-xl text-center flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full bg-blue-900/20 flex items-center justify-center text-blue-450 font-bold font-display text-sm mb-4">
+        <div class="p-6 bg-slate-900/40 border border-slate-800 rounded-xl text-center flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full bg-blue-900/20 flex items-center justify-center text-blue-400 font-bold font-display text-sm mb-4">
             02
           </div>
-          <h4 class="font-display font-bold text-white text-sm mb-2">Architecture Blueprint</h4>
-          <p class="text-xs text-gray-550 leading-relaxed">
+          <h4 class="font-display font-bold text-white text-base mb-2">Architecture Blueprint</h4>
+          <p class="text-sm text-gray-400 leading-relaxed">
             I map out the detailed data flow configurations, database schemas, and tool specifications in a transparent proposal blueprint.
           </p>
         </div>
 
         <!-- Step 3 -->
-        <div class="p-6 bg-slate-900/40 border border-slate-850 rounded-xl text-center flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full bg-indigo-900/20 flex items-center justify-center text-indigo-450 font-bold font-display text-sm mb-4">
+        <div class="p-6 bg-slate-900/40 border border-slate-800 rounded-xl text-center flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full bg-indigo-900/20 flex items-center justify-center text-indigo-400 font-bold font-display text-sm mb-4">
             03
           </div>
-          <h4 class="font-display font-bold text-white text-sm mb-2">Milestone Development</h4>
-          <p class="text-xs text-gray-550 leading-relaxed">
+          <h4 class="font-display font-bold text-white text-base mb-2">Milestone Development</h4>
+          <p class="text-sm text-gray-400 leading-relaxed">
             Writing unit-tested code files and container scripts. Staging outputs are validated alongside client developers at regular intervals.
           </p>
         </div>
 
         <!-- Step 4 -->
-        <div class="p-6 bg-slate-900/40 border border-slate-850 rounded-xl text-center flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full bg-cyan-900/20 flex items-center justify-center text-cyan-450 font-bold font-display text-sm mb-4">
+        <div class="p-6 bg-slate-900/40 border border-slate-800 rounded-xl text-center flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full bg-cyan-900/20 flex items-center justify-center text-cyan-400 font-bold font-display text-sm mb-4">
             04
           </div>
-          <h4 class="font-display font-bold text-white text-sm mb-2">Handoff & Observability</h4>
-          <p class="text-xs text-gray-550 leading-relaxed">
+          <h4 class="font-display font-bold text-white text-base mb-2">Handoff & Observability</h4>
+          <p class="text-sm text-gray-400 leading-relaxed">
             Deploying systems to live cloud clusters. Wiring Slack notifications, alert boundaries, structured metrics, and handing off instructions.
           </p>
         </div>
@@ -439,10 +439,12 @@
         <!-- Brand -->
         <div class="lg:col-span-2">
           <a href="index.html" class="flex items-center space-x-2 mb-6 group">
-            <div class="w-8 h-8 rounded bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-              <i data-lucide="database" class="w-4 h-4 text-white"></i>
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+              <i data-lucide="database" class="w-5 h-5 text-white"></i>
             </div>
-            <span class="font-display font-bold text-lg text-white"><span class="text-cyan-400">Datrix</span></span>
+            <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">
+              <span class="text-cyan-400">Datrix</span>
+            </span>
           </a>
           <p class="text-sm leading-relaxed mb-6 max-w-sm">
             Expert freelance development specializing in Python automation, production-grade ETL pipelines, custom API connectors, and robust cloud data warehousing.

@@ -21,6 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Sticky Header ---
   const header = document.querySelector('header');
   
+  // --- Back to Top Button ---
+  const backToTopBtn = document.createElement('button');
+  backToTopBtn.id = 'back-to-top';
+  backToTopBtn.className = 'fixed bottom-6 right-6 rtl:right-auto rtl:left-6 z-50 p-3 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 text-white shadow-lg shadow-cyan-500/30 border border-cyan-400/20 transition-all duration-300 translate-y-20 opacity-0 pointer-events-none hover:scale-110 hover:shadow-cyan-500/50 active:scale-95 focus:outline-none focus:ring-2 focus:ring-cyan-400 flex items-center justify-center';
+  backToTopBtn.setAttribute('aria-label', 'Back to top');
+  backToTopBtn.innerHTML = '<i data-lucide="arrow-up" class="w-5 h-5"></i>';
+  document.body.appendChild(backToTopBtn);
+
+  // Initialize Lucide icons again to pick up the new button icon
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+
   window.addEventListener('scroll', () => {
     // Sticky Nav
     if (window.scrollY > 20) {
@@ -30,6 +43,22 @@ document.addEventListener('DOMContentLoaded', () => {
       header.classList.remove('glass-navbar', 'py-3');
       header.classList.add('py-5', 'bg-transparent');
     }
+
+    // Back to top visibility
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      backToTopBtn.classList.add('translate-y-0', 'opacity-100');
+    } else {
+      backToTopBtn.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+      backToTopBtn.classList.remove('translate-y-0', 'opacity-100');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
 
   // Trigger scroll listener on load to set initial state

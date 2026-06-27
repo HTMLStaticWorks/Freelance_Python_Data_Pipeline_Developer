@@ -75,7 +75,7 @@
         </a>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center space-x-8">
+        <nav class="hidden lg:flex items-center lg:space-x-4 xl:space-x-8">
           <a href="index.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 1</a>
           <a href="home2.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 2</a>
           <a href="about.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">About</a>
@@ -86,7 +86,7 @@
         </nav>
 
         <!-- Controls & CTA Button -->
-        <div class="hidden md:flex items-center space-x-4">
+        <div class="hidden lg:flex items-center space-x-4">
           <!-- RTL Toggle -->
           <button id="rtl-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-xs font-bold font-display uppercase tracking-wider text-gray-300 hover:text-white transition-colors flex items-center justify-center flex-shrink-0" title="Toggle RTL/LTR">
             <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
@@ -104,7 +104,7 @@
         </div>
 
         <!-- Mobile Menu Button -->
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-expanded="false">
             <i id="menu-icon-open" data-lucide="menu" class="w-6 h-6"></i>
             <i id="menu-icon-close" data-lucide="x" class="w-6 h-6 hidden"></i>
@@ -114,7 +114,7 @@
     </div>
 
     <!-- Mobile Navigation Panel -->
-    <div id="mobile-menu" class="hidden md:hidden flex-col px-4 pt-2 pb-6 space-y-3 bg-[#0B1120]/95 backdrop-blur-lg border-b border-slate-800">
+    <div id="mobile-menu" class="hidden lg:hidden flex-col px-4 pt-2 pb-6 space-y-3 bg-[#0B1120]/95 backdrop-blur-lg border-b border-slate-800">
       <a href="index.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 1</a>
       <a href="home2.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 2</a>
       <a href="about.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">About</a>
@@ -185,7 +185,7 @@
       </div>
 
       <!-- Hero Features / Value Tags -->
-      <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto pt-10 border-t border-slate-800/80" data-aos="fade-up" data-aos-delay="400">
+      <div class="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto pt-10 border-t border-slate-800/80" data-aos="fade-up" data-aos-delay="400">
         <div class="flex items-center space-x-3 text-left">
           <div class="w-10 h-10 rounded-lg bg-blue-900/40 flex items-center justify-center border border-blue-800/30">
             <i data-lucide="git-merge" class="w-5 h-5 text-cyan-400"></i>
@@ -283,10 +283,10 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         <!-- ETL Pipeline Card -->
-        <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between" data-aos="fade-up">
+        <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between group" data-aos="fade-up">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6">
-              <i data-lucide="git-merge" class="w-6 h-6"></i>
+            <div class="w-full h-44 rounded-xl overflow-hidden border border-slate-800/80 mb-6 bg-slate-950/40">
+              <img src="images/etl_pipeline.png" alt="ETL Pipeline Development" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             </div>
             <h3 class="text-xl font-bold font-display text-white mb-3">ETL Pipeline Development</h3>
             <p class="text-gray-400 text-sm leading-relaxed mb-6">
@@ -299,10 +299,10 @@
         </div>
 
         <!-- Data Engineering Card -->
-        <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="100">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-6">
-              <i data-lucide="database" class="w-6 h-6"></i>
+            <div class="w-full h-44 rounded-xl overflow-hidden border border-slate-800/80 mb-6 bg-slate-950/40">
+              <img src="images/data_engineering.png" alt="Data Engineering" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             </div>
             <h3 class="text-xl font-bold font-display text-white mb-3">Data Engineering</h3>
             <p class="text-gray-400 text-sm leading-relaxed mb-6">
@@ -315,10 +315,10 @@
         </div>
 
         <!-- Workflow Automation Card -->
-        <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+        <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="200">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6">
-              <i data-lucide="cpu" class="w-6 h-6"></i>
+            <div class="w-full h-44 rounded-xl overflow-hidden border border-slate-800/80 mb-6 bg-slate-950/40">
+              <img src="images/workflow_automation.png" alt="Workflow Automation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             </div>
             <h3 class="text-xl font-bold font-display text-white mb-3">Workflow Automation</h3>
             <p class="text-gray-400 text-sm leading-relaxed mb-6">
@@ -331,10 +331,10 @@
         </div>
 
         <!-- Python Apps Card -->
-        <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between" data-aos="fade-up">
+        <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between group" data-aos="fade-up">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-6">
-              <i data-lucide="terminal" class="w-6 h-6"></i>
+            <div class="w-full h-44 rounded-xl overflow-hidden border border-slate-800/80 mb-6 bg-slate-950/40">
+              <img src="images/python_apps.png" alt="Python Application Development" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             </div>
             <h3 class="text-xl font-bold font-display text-white mb-3">Python Application Development</h3>
             <p class="text-gray-400 text-sm leading-relaxed mb-6">
@@ -347,10 +347,10 @@
         </div>
 
         <!-- Cloud Data Processing Card -->
-        <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="100">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6">
-              <i data-lucide="cloud" class="w-6 h-6"></i>
+            <div class="w-full h-44 rounded-xl overflow-hidden border border-slate-800/80 mb-6 bg-slate-950/40">
+              <img src="images/cloud_data.png" alt="Cloud Data Processing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             </div>
             <h3 class="text-xl font-bold font-display text-white mb-3">Cloud Data Processing</h3>
             <p class="text-gray-400 text-sm leading-relaxed mb-6">
@@ -363,10 +363,10 @@
         </div>
 
         <!-- API Integrations Card -->
-        <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+        <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="200">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6">
-              <i data-lucide="link" class="w-6 h-6"></i>
+            <div class="w-full h-44 rounded-xl overflow-hidden border border-slate-800/80 mb-6 bg-slate-950/40">
+              <img src="images/api_integrations.png" alt="API Integrations" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             </div>
             <h3 class="text-xl font-bold font-display text-white mb-3">API Integrations</h3>
             <p class="text-gray-400 text-sm leading-relaxed mb-6">
@@ -396,7 +396,7 @@
             A review of enterprise systems built to scale business capabilities, increase database throughput, and save operational expenses.
           </p>
         </div>
-        <a href="portfolio.html" class="mt-6 md:mt-0 px-6 py-3 bg-slate-800 border border-slate-700 hover:border-slate-500 rounded-lg text-white font-medium text-sm transition-all hover:bg-slate-750 flex items-center space-x-2 self-start md:self-auto" data-aos="fade-up" data-aos-delay="200">
+        <a href="portfolio.html" class="mt-6 md:mt-0 px-6 py-3 bg-slate-800 border border-slate-700 hover:border-slate-500 hover:-translate-y-0.5 rounded-lg text-white font-medium text-sm transition-all hover:bg-slate-750 flex items-center space-x-2 self-start md:self-auto" data-aos="fade-up" data-aos-delay="200">
           <span>Explore All Case Studies</span>
           <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
         </a>
@@ -676,10 +676,24 @@
     <div class="absolute top-1/2 left-0 w-80 h-80 bg-cyan-500/5 rounded-full blur-[100px] pulsing-glow"></div>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       
-      <div class="max-w-2xl mx-auto mb-16">
-        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight" data-aos="fade-up">
-          What My Clients Say
-        </h2>
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 text-left">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight" data-aos="fade-up">
+            What My Clients Say
+          </h2>
+          <p class="mt-4 text-gray-400 max-w-xl" data-aos="fade-up" data-aos-delay="100">
+            Hear from operations directors, engineering leaders, and founders about the impact of custom data pipelines.
+          </p>
+        </div>
+        <!-- Carousel controls -->
+        <div class="flex space-x-2 mt-6 md:mt-0" data-aos="fade-up" data-aos-delay="200">
+          <button id="testimonial-prev" class="w-10 h-10 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors" aria-label="Previous testimonial">
+            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+          </button>
+          <button id="testimonial-next" class="w-10 h-10 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors" aria-label="Next testimonial">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </button>
+        </div>
       </div>
 
       <!-- Testimonial Slider Container -->
@@ -692,9 +706,7 @@
           </div>
           <div class="flex items-center justify-between flex-wrap gap-4">
             <div class="flex items-center space-x-4">
-              <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center font-bold text-white text-lg">
-                AM
-              </div>
+              <img src="images/client_austin.png" alt="Austin Myers" class="w-12 h-12 rounded-full object-cover border border-slate-700">
               <div>
                 <div class="font-bold text-white font-display">Austin Myers</div>
                 <div class="text-xs text-gray-500">Director of Ops, StackAnalytics Agency</div>
@@ -714,9 +726,7 @@
           </div>
           <div class="flex items-center justify-between flex-wrap gap-4">
             <div class="flex items-center space-x-4">
-              <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center font-bold text-white text-lg">
-                HL
-              </div>
+              <img src="images/client_hanna.png" alt="Hanna Larson" class="w-12 h-12 rounded-full object-cover border border-slate-700">
               <div>
                 <div class="font-bold text-white font-display">Hanna Larson</div>
                 <div class="text-xs text-gray-500">VP of Software Engineering, ShipGlobal Inc</div>
@@ -727,16 +737,6 @@
               <span class="text-sm font-semibold text-indigo-400 font-display">94% lag reduction</span>
             </div>
           </div>
-        </div>
-
-        <!-- Carousel controls -->
-        <div class="flex space-x-2 mt-8 md:absolute md:bottom-12 md:right-12">
-          <button id="testimonial-prev" class="w-10 h-10 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors" aria-label="Previous testimonial">
-            <i data-lucide="chevron-left" class="w-5 h-5"></i>
-          </button>
-          <button id="testimonial-next" class="w-10 h-10 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors" aria-label="Next testimonial">
-            <i data-lucide="chevron-right" class="w-5 h-5"></i>
-          </button>
         </div>
 
       </div>
@@ -775,10 +775,12 @@
         <!-- Brand -->
         <div class="lg:col-span-2">
           <a href="index.html" class="flex items-center space-x-2 mb-6 group">
-            <div class="w-8 h-8 rounded bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-              <i data-lucide="database" class="w-4 h-4 text-white"></i>
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+              <i data-lucide="database" class="w-5 h-5 text-white"></i>
             </div>
-            <span class="font-display font-bold text-lg text-white"><span class="text-cyan-400">Datrix</span></span>
+            <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">
+              <span class="text-cyan-400">Datrix</span>
+            </span>
           </a>
           <p class="text-sm leading-relaxed mb-6 max-w-sm">
             Expert freelance development specializing in Python automation, production-grade ETL pipelines, custom API connectors, and robust cloud data warehousing.

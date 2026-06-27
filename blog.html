@@ -74,7 +74,7 @@
         </a>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center space-x-8">
+        <nav class="hidden lg:flex items-center lg:space-x-4 xl:space-x-8">
           <a href="index.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 1</a>
           <a href="home2.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 2</a>
           <a href="about.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">About</a>
@@ -85,7 +85,7 @@
         </nav>
 
         <!-- Controls & CTA Button -->
-        <div class="hidden md:flex items-center space-x-4">
+        <div class="hidden lg:flex items-center space-x-4">
           <!-- RTL Toggle -->
           <button id="rtl-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-xs font-bold font-display uppercase tracking-wider text-gray-300 hover:text-white transition-colors flex items-center justify-center flex-shrink-0" title="Toggle RTL/LTR">
             <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
@@ -103,7 +103,7 @@
         </div>
 
         <!-- Mobile Menu Button -->
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-expanded="false">
             <i id="menu-icon-open" data-lucide="menu" class="w-6 h-6"></i>
             <i id="menu-icon-close" data-lucide="x" class="w-6 h-6 hidden"></i>
@@ -113,7 +113,7 @@
     </div>
 
     <!-- Mobile Navigation Panel -->
-    <div id="mobile-menu" class="hidden md:hidden flex-col px-4 pt-2 pb-6 space-y-3 bg-[#0B1120]/95 backdrop-blur-lg border-b border-slate-800">
+    <div id="mobile-menu" class="hidden lg:hidden flex-col px-4 pt-2 pb-6 space-y-3 bg-[#0B1120]/95 backdrop-blur-lg border-b border-slate-800">
       <a href="index.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 1</a>
       <a href="home2.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">Home 2</a>
       <a href="about.html" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800">About</a>
@@ -146,7 +146,7 @@
   <section class="pt-32 pb-16 md:pt-40 md:pb-24 grid-bg overflow-hidden border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <div class="glass-card p-6 md:p-10 rounded-3xl border border-slate-850 flex flex-col lg:flex-row gap-8 items-center" data-aos="fade-up">
+      <div class="glass-card p-6 md:p-10 rounded-3xl border border-slate-850 flex flex-col-reverse lg:flex-row gap-8 items-center" data-aos="fade-up">
         
         <!-- Graphic / Console mockup -->
         <div class="w-full lg:w-1/2 bg-slate-950 p-6 rounded-2xl border border-slate-850 font-mono text-[11px] leading-relaxed text-cyan-400 glow-indigo select-none">
@@ -226,17 +226,17 @@
           <div class="blog-post glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-category="python" data-aos="fade-up">
             <div>
               <div class="flex items-center justify-between mb-4">
-                <span class="px-2 py-0.5 bg-slate-800 border border-slate-750 text-gray-400 rounded text-[9px] font-semibold uppercase tracking-wider font-display">Python</span>
-                <span class="text-[9px] text-gray-500">June 21, 2026</span>
+                <span class="px-2 py-0.5 bg-slate-800 border border-slate-750 text-gray-400 rounded text-[11px] font-semibold uppercase tracking-wider font-display">Python</span>
+                <span class="text-[11px] text-gray-500">June 21, 2026</span>
               </div>
-              <h3 class="blog-title text-lg font-bold font-display text-white mb-3 hover:text-blue-400 transition-colors">
+              <h3 class="blog-title text-xl font-bold font-display text-white mb-3 hover:text-blue-400 transition-colors">
                 <a href="#">Polars vs Pandas: Benchmark Analysis in 2026</a>
               </h3>
-              <p class="blog-excerpt text-gray-400 text-xs leading-relaxed mb-6">
+              <p class="blog-excerpt text-gray-400 text-sm leading-relaxed mb-6">
                 Evaluating execution times, memory usage, and multi-threading capabilities on large data files.
               </p>
             </div>
-            <div class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-slate-850">
+            <div class="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-slate-850">
               <span>6 min read</span>
               <a href="#" class="text-sm font-semibold text-cyan-400 hover:text-cyan-300">Read &rarr;</a>
             </div>
@@ -246,17 +246,17 @@
           <div class="blog-post glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-category="automation" data-aos="fade-up" data-aos-delay="100">
             <div>
               <div class="flex items-center justify-between mb-4">
-                <span class="px-2 py-0.5 bg-slate-800 border border-slate-750 text-gray-400 rounded text-[9px] font-semibold uppercase tracking-wider font-display">Automation</span>
-                <span class="text-[9px] text-gray-500">June 18, 2026</span>
+                <span class="px-2 py-0.5 bg-slate-800 border border-slate-750 text-gray-400 rounded text-[11px] font-semibold uppercase tracking-wider font-display">Automation</span>
+                <span class="text-[11px] text-gray-500">June 18, 2026</span>
               </div>
-              <h3 class="blog-title text-lg font-bold font-display text-white mb-3 hover:text-blue-400 transition-colors">
+              <h3 class="blog-title text-xl font-bold font-display text-white mb-3 hover:text-blue-400 transition-colors">
                 <a href="#">Bypassing Bot Blockers: Python Scrapy Proxy Rotation</a>
               </h3>
-              <p class="blog-excerpt text-gray-400 text-xs leading-relaxed mb-6">
+              <p class="blog-excerpt text-gray-400 text-sm leading-relaxed mb-6">
                 How we construct proxy rotation middleware, mimic natural behaviors, and scrape competitor prices.
               </p>
             </div>
-            <div class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-slate-850">
+            <div class="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-slate-850">
               <span>9 min read</span>
               <a href="#" class="text-sm font-semibold text-blue-400 hover:text-blue-300">Read &rarr;</a>
             </div>
@@ -266,17 +266,17 @@
           <div class="blog-post glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-category="cloud" data-aos="fade-up">
             <div>
               <div class="flex items-center justify-between mb-4">
-                <span class="px-2 py-0.5 bg-slate-800 border border-slate-750 text-gray-400 rounded text-[9px] font-semibold uppercase tracking-wider font-display">Cloud</span>
-                <span class="text-[9px] text-gray-500">June 14, 2026</span>
+                <span class="px-2 py-0.5 bg-slate-800 border border-slate-750 text-gray-400 rounded text-[11px] font-semibold uppercase tracking-wider font-display">Cloud</span>
+                <span class="text-[11px] text-gray-500">June 14, 2026</span>
               </div>
-              <h3 class="blog-title text-lg font-bold font-display text-white mb-3 hover:text-blue-400 transition-colors">
+              <h3 class="blog-title text-xl font-bold font-display text-white mb-3 hover:text-blue-400 transition-colors">
                 <a href="#">Serverless Warehousing on AWS Lambda & Snowflake</a>
               </h3>
-              <p class="blog-excerpt text-gray-400 text-xs leading-relaxed mb-6">
+              <p class="blog-excerpt text-gray-400 text-sm leading-relaxed mb-6">
                 Learn to configure light serverless scripts that trigger warehouse runs only when payloads land in S3.
               </p>
             </div>
-            <div class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-slate-850">
+            <div class="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-slate-850">
               <span>7 min read</span>
               <a href="#" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300">Read &rarr;</a>
             </div>
@@ -286,17 +286,17 @@
           <div class="blog-post glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-category="etl" data-aos="fade-up" data-aos-delay="100">
             <div>
               <div class="flex items-center justify-between mb-4">
-                <span class="px-2 py-0.5 bg-slate-800 border border-slate-750 text-gray-400 rounded text-[9px] font-semibold uppercase tracking-wider font-display">ETL</span>
-                <span class="text-[9px] text-gray-500">June 10, 2026</span>
+                <span class="px-2 py-0.5 bg-slate-800 border border-slate-750 text-gray-400 rounded text-[11px] font-semibold uppercase tracking-wider font-display">ETL</span>
+                <span class="text-[11px] text-gray-500">June 10, 2026</span>
               </div>
-              <h3 class="blog-title text-lg font-bold font-display text-white mb-3 hover:text-blue-400 transition-colors">
+              <h3 class="blog-title text-xl font-bold font-display text-white mb-3 hover:text-blue-400 transition-colors">
                 <a href="#">Integrating Schema Checks with Great Expectations</a>
               </h3>
-              <p class="blog-excerpt text-gray-400 text-xs leading-relaxed mb-6">
+              <p class="blog-excerpt text-gray-400 text-sm leading-relaxed mb-6">
                 Implementing automated schema checks to block null inputs before writing corrupted values to databases.
               </p>
             </div>
-            <div class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-slate-850">
+            <div class="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-slate-850">
               <span>5 min read</span>
               <a href="#" class="text-sm font-semibold text-cyan-400 hover:text-cyan-300">Read &rarr;</a>
             </div>
@@ -392,10 +392,12 @@
         <!-- Brand -->
         <div class="lg:col-span-2">
           <a href="index.html" class="flex items-center space-x-2 mb-6 group">
-            <div class="w-8 h-8 rounded bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-              <i data-lucide="database" class="w-4 h-4 text-white"></i>
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+              <i data-lucide="database" class="w-5 h-5 text-white"></i>
             </div>
-            <span class="font-display font-bold text-lg text-white"><span class="text-cyan-400">Datrix</span></span>
+            <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">
+              <span class="text-cyan-400">Datrix</span>
+            </span>
           </a>
           <p class="text-sm leading-relaxed mb-6 max-w-sm">
             Expert freelance development specializing in Python automation, production-grade ETL pipelines, custom API connectors, and robust cloud data warehousing.
