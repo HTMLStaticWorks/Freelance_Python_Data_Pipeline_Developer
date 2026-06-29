@@ -209,80 +209,92 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         <!-- SLA & High Availability -->
-        <div class="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between" data-aos="fade-up">
+        <div class="rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between overflow-hidden group hover:border-blue-500/40 transition-colors duration-300" data-aos="fade-up">
           <div>
-            <div class="w-10 h-10 rounded-lg bg-blue-900/30 flex items-center justify-center text-blue-400 mb-6">
-              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            <div class="w-full h-44 overflow-hidden">
+              <img src="images/sla_availability.png" alt="Service Level Agreements Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <h3 class="text-lg font-bold font-display text-white mb-3">Service Level Agreements (SLAs)</h3>
-            <p class="text-sm text-gray-400 leading-relaxed">
-              We define strict pipelines metrics (e.g. data latency, daily completeness thresholds) to ensure business reporting triggers on schedule.
-            </p>
+            <div class="p-6 pt-5">
+              <h3 class="text-lg font-bold font-display text-white mb-3">Service Level Agreements (SLAs)</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">
+                We define strict pipelines metrics (e.g. data latency, daily completeness thresholds) to ensure business reporting triggers on schedule.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- Logging & Observability -->
-        <div class="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+        <div class="rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between overflow-hidden group hover:border-cyan-500/40 transition-colors duration-300" data-aos="fade-up" data-aos-delay="100">
           <div>
-            <div class="w-10 h-10 rounded-lg bg-cyan-900/30 flex items-center justify-center text-cyan-400 mb-6">
-              <i data-lucide="activity" class="w-5 h-5"></i>
+            <div class="w-full h-44 overflow-hidden">
+              <img src="images/observability_logging.png" alt="Comprehensive Observability Console" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <h3 class="text-lg font-bold font-display text-white mb-3">Comprehensive Observability</h3>
-            <p class="text-sm text-gray-400 leading-relaxed">
-              Integrating centralized logging services and structured metrics (AWS CloudWatch, Datadog) to audit workflow health.
-            </p>
+            <div class="p-6 pt-5">
+              <h3 class="text-lg font-bold font-display text-white mb-3">Comprehensive Observability</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">
+                Integrating centralized logging services and structured metrics (AWS CloudWatch, Datadog) to audit workflow health.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- Automated Error Alerts -->
-        <div class="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+        <div class="rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between overflow-hidden group hover:border-indigo-500/40 transition-colors duration-300" data-aos="fade-up" data-aos-delay="200">
           <div>
-            <div class="w-10 h-10 rounded-lg bg-indigo-900/30 flex items-center justify-center text-indigo-400 mb-6">
-              <i data-lucide="bell" class="w-5 h-5"></i>
+            <div class="w-full h-44 overflow-hidden">
+              <img src="images/alert_routing.png" alt="Intelligent Alert Routing System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <h3 class="text-lg font-bold font-display text-white mb-3">Intelligent Alert Routing</h3>
-            <p class="text-sm text-gray-400 leading-relaxed">
-              Real-time failure alerting utilizing PagerDuty or Slack Webhooks, providing complete traceback logs instantly to debug execution snags.
-            </p>
+            <div class="p-6 pt-5">
+              <h3 class="text-lg font-bold font-display text-white mb-3">Intelligent Alert Routing</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">
+                Real-time failure alerting utilizing PagerDuty or Slack Webhooks, providing complete traceback logs instantly to debug execution snags.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- Security & Compliance -->
-        <div class="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between" data-aos="fade-up">
+        <div class="rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between overflow-hidden group hover:border-indigo-500/40 transition-colors duration-300" data-aos="fade-up">
           <div>
-            <div class="w-10 h-10 rounded-lg bg-indigo-900/30 flex items-center justify-center text-indigo-400 mb-6">
-              <i data-lucide="lock" class="w-5 h-5"></i>
+            <div class="w-full h-44 overflow-hidden">
+              <img src="images/data_security.png" alt="Data Security and Confidentiality" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <h3 class="text-lg font-bold font-display text-white mb-3">Data Confidentiality</h3>
-            <p class="text-sm text-gray-400 leading-relaxed">
-              Secure credential handling using cloud secret stores (AWS Secrets Manager, Vault), encrypting database variables both in-transit and at-rest.
-            </p>
+            <div class="p-6 pt-5">
+              <h3 class="text-lg font-bold font-display text-white mb-3">Data Confidentiality</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">
+                Secure credential handling using cloud secret stores (AWS Secrets Manager, Vault), encrypting database variables both in-transit and at-rest.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- Schema Validation -->
-        <div class="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+        <div class="rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between overflow-hidden group hover:border-blue-500/40 transition-colors duration-300" data-aos="fade-up" data-aos-delay="100">
           <div>
-            <div class="w-10 h-10 rounded-lg bg-blue-900/30 flex items-center justify-center text-blue-400 mb-6">
-              <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+            <div class="w-full h-44 overflow-hidden">
+              <img src="images/schema_validation.png" alt="Automated Schema Validation Pipeline" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <h3 class="text-lg font-bold font-display text-white mb-3">Automated Schema Quality</h3>
-            <p class="text-sm text-gray-400 leading-relaxed">
-              Enforcing checks using Great Expectations or custom Pydantic schemas to automatically reject corrupted raw payloads.
-            </p>
+            <div class="p-6 pt-5">
+              <h3 class="text-lg font-bold font-display text-white mb-3">Automated Schema Quality</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">
+                Enforcing checks using Great Expectations or custom Pydantic schemas to automatically reject corrupted raw payloads.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- Containerized Portability -->
-        <div class="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+        <div class="rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between overflow-hidden group hover:border-cyan-500/40 transition-colors duration-300" data-aos="fade-up" data-aos-delay="200">
           <div>
-            <div class="w-10 h-10 rounded-lg bg-cyan-900/30 flex items-center justify-center text-cyan-400 mb-6">
-              <i data-lucide="box" class="w-5 h-5"></i>
+            <div class="w-full h-44 overflow-hidden">
+              <img src="images/docker_deployments.png" alt="Dockerized Container Deployments" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <h3 class="text-lg font-bold font-display text-white mb-3">Dockerized Deployments</h3>
-            <p class="text-sm text-gray-400 leading-relaxed">
-              Containerizing python environments to prevent 'works on my machine' bugs, guaranteeing identical execution on AWS, Azure, or Kubernetes.
-            </p>
+            <div class="p-6 pt-5">
+              <h3 class="text-lg font-bold font-display text-white mb-3">Dockerized Deployments</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">
+                Containerizing python environments to prevent 'works on my machine' bugs, guaranteeing identical execution on AWS, Azure, or Kubernetes.
+              </p>
+            </div>
           </div>
         </div>
 

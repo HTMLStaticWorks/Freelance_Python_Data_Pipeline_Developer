@@ -300,17 +300,20 @@
     </div>
   </section>
 
-  <!-- FAQS ACCORDION SECTION -->
+  <!-- PROJECT QUOTE FAQS ACCORDION SECTION -->
   <section class="py-24 bg-[#111827] border-y border-slate-800/80">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight" data-aos="fade-up">
-          Frequently Asked Questions
+          Project & Pricing FAQs
         </h2>
+        <p class="mt-4 text-gray-400" data-aos="fade-up" data-aos-delay="100">
+          Answers to common questions about quotes, deliverables, pricing structures, and what to expect after submitting your brief.
+        </p>
       </div>
 
-      <div class="accordion-list space-y-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="accordion-list space-y-4" data-aos="fade-up" data-aos-delay="200">
         
         <!-- FAQ 1 -->
         <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
@@ -328,12 +331,12 @@
         <!-- FAQ 2 -->
         <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
           <button class="accordion-header w-full px-6 py-5 text-left font-display font-semibold text-white flex items-center justify-between hover:bg-slate-900/50 transition-colors">
-            <span>How do you handle pipeline handoffs and maintenance?</span>
+            <span>What deliverables are included in a typical project handoff?</span>
             <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-cyan-400 transition-transform duration-200"></i>
           </button>
           <div class="accordion-content bg-slate-900/20 text-sm text-gray-400">
             <div class="px-6 pb-6 pt-2 leading-relaxed">
-              Resiliency is built into the code. Every handoff includes comprehensive README documentations, detailed diagram sketches, automated test commands, and cloud variables setup. I also offer a 30-day post-launch warranty to fix any schema drifts or intermittent API snags, along with optional ongoing support agreements.
+              Every project handoff includes production-ready source code, comprehensive README documentation, architecture diagrams, automated test suites, Docker container configurations, and cloud deployment runbooks. I also provide a recorded Loom walkthrough of the entire codebase and a 30-day post-launch warranty to address any schema drifts or intermittent issues.
             </div>
           </div>
         </div>
@@ -341,12 +344,12 @@
         <!-- FAQ 3 -->
         <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
           <button class="accordion-header w-full px-6 py-5 text-left font-display font-semibold text-white flex items-center justify-between hover:bg-slate-900/50 transition-colors">
-            <span>Can you sign an NDA before we share API credentials?</span>
+            <span>Can you sign an NDA before we share API credentials or data?</span>
             <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-cyan-400 transition-transform duration-200"></i>
           </button>
           <div class="accordion-content bg-slate-900/20 text-sm text-gray-400">
             <div class="px-6 pb-6 pt-2 leading-relaxed">
-              Yes. I prioritize data security and routinely sign standard mutual Non-Disclosure Agreements (NDAs) before auditing source codes, database structures, or endpoint payloads. We handle credentials securely using secret key vaults.
+              Yes. I prioritize data security and routinely sign standard mutual Non-Disclosure Agreements (NDAs) before auditing source codes, database structures, or endpoint payloads. All credentials are handled securely using cloud secret stores like AWS Secrets Manager or HashiCorp Vault — never hardcoded or stored in plain text.
             </div>
           </div>
         </div>
@@ -354,12 +357,25 @@
         <!-- FAQ 4 -->
         <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
           <button class="accordion-header w-full px-6 py-5 text-left font-display font-semibold text-white flex items-center justify-between hover:bg-slate-900/50 transition-colors">
-            <span>Which cloud environments and database structures do you support?</span>
+            <span>Which cloud platforms and database technologies do you support?</span>
             <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-cyan-400 transition-transform duration-200"></i>
           </button>
           <div class="accordion-content bg-slate-900/20 text-sm text-gray-400">
             <div class="px-6 pb-6 pt-2 leading-relaxed">
-              My core stack revolves around AWS (Amazon Web Services) and PostgreSQL. However, I have extensive deployment experience in Snowflake, Google BigQuery, Athena, MongoDB, Redis, and MySQL. I configure all systems utilizing Docker containers, guaranteeing portability to other cloud ecosystems (like Microsoft Azure or GCP).
+              My core stack revolves around AWS (ECS, Lambda, RDS, S3) and PostgreSQL. I also have extensive deployment experience with Snowflake, Google BigQuery, Athena, MongoDB, Redis, and MySQL. All systems are containerized with Docker, guaranteeing portability across AWS, Azure, or GCP cloud ecosystems without vendor lock-in.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+          <button class="accordion-header w-full px-6 py-5 text-left font-display font-semibold text-white flex items-center justify-between hover:bg-slate-900/50 transition-colors">
+            <span>What happens after the project is delivered? Is ongoing support available?</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-cyan-400 transition-transform duration-200"></i>
+          </button>
+          <div class="accordion-content bg-slate-900/20 text-sm text-gray-400">
+            <div class="px-6 pb-6 pt-2 leading-relaxed">
+              Every project includes a 30-day post-launch warranty at no extra charge — covering bug fixes, schema drift corrections, and API connectivity issues. Beyond that, I offer optional monthly retainer plans for ongoing monitoring, feature additions, performance tuning, and pipeline scaling as your data volumes grow.
             </div>
           </div>
         </div>
@@ -381,7 +397,7 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="200">
         
         <!-- Step 1 -->
         <div class="p-6 bg-slate-900/40 border border-slate-800 rounded-xl text-center flex flex-col items-center">
