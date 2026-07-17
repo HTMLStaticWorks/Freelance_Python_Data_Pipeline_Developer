@@ -12,11 +12,15 @@
   --font-space: 'Space Grotesk', sans-serif;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: var(--font-inter);
   background-color: var(--color-navy);
   color: #F3F4F6;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -481,6 +485,10 @@ html:not(.dark) .nav-link:hover {
   color: #1D4ED8 !important;
 }
 
+html:not(.dark) #mobile-menu-btn {
+  color: #0F172A !important;
+}
+
 html:not(.dark) #rtl-toggle:hover,
 html:not(.dark) #theme-toggle:hover,
 html:not(.dark) #mobile-rtl-toggle:hover,
@@ -518,6 +526,20 @@ html:not(.dark) .bg-slate-950\/60 {
 }
 
 html:not(.dark) .bg-slate-950\/60 .text-gray-500 {
+  color: #475569 !important;
+}
+
+/* Fix for system architecture console header in light mode */
+html:not(.dark) .bg-slate-950\/80 {
+  background-color: #CBD5E1 !important;
+  border-color: #94A3B8 !important;
+}
+
+html:not(.dark) .bg-slate-950\/80 .text-gray-400 {
+  color: #0F172A !important;
+}
+
+html:not(.dark) .bg-slate-950\/80 .text-gray-500 {
   color: #475569 !important;
 }
 

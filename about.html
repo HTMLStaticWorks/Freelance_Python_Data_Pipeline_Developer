@@ -9,7 +9,7 @@
   <meta name="description" content="Read about Alex, a senior freelance Python developer and data engineer. Learn about our development methodology, certifications, and career milestones.">
   <meta name="keywords" content="Data Engineer Story, Python Developer Career, AWS Certified Solutions Architect, Apache Airflow Certification, Data Pipeline Methodology">
   
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -65,16 +65,45 @@
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <a href="index.html" class="flex items-center space-x-2 group">
-          <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-            <i data-lucide="database" class="w-5 h-5 text-white"></i>
+          <div class="relative w-10 h-10 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+            <!-- Outer Glow Aura -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-indigo-500 rounded-xl blur-md opacity-40 group-hover:opacity-75 group-hover:blur-lg transition-all duration-300"></div>
+            <!-- Custom Isometric Pipeline SVG -->
+            <svg class="relative w-9 h-9 transition-transform duration-500 group-hover:rotate-[15deg]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grad-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#22d3ee" />
+                  <stop offset="100%" stop-color="#0891b2" />
+                </linearGradient>
+                <linearGradient id="grad-indigo" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#818cf8" />
+                  <stop offset="100%" stop-color="#4f46e5" />
+                </linearGradient>
+                <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#60a5fa" />
+                  <stop offset="100%" stop-color="#2563eb" />
+                </linearGradient>
+              </defs>
+              <path d="M25 25 L50 15 L75 25 L75 55 L50 75 L25 55 Z" stroke="url(#grad-indigo)" stroke-width="4" stroke-linejoin="round" opacity="0.4"/>
+              <path d="M25 25 L50 40 L75 25" stroke="url(#grad-cyan)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M50 40 L50 75" stroke="url(#grad-blue)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M25 55 L50 40 L75 55" stroke="url(#grad-indigo)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="25" cy="25" r="5.5" fill="#22d3ee"/>
+              <circle cx="50" cy="15" r="4.5" fill="#818cf8"/>
+              <circle cx="75" cy="25" r="5.5" fill="#22d3ee"/>
+              <circle cx="75" cy="55" r="4.5" fill="#60a5fa"/>
+              <circle cx="50" cy="75" r="6" fill="#818cf8"/>
+              <circle cx="25" cy="55" r="4.5" fill="#60a5fa"/>
+              <circle cx="50" cy="40" r="7.5" fill="#ffffff" stroke="url(#grad-cyan)" stroke-width="2.5"/>
+            </svg>
           </div>
           <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">
-            <span class="text-cyan-400">Datrix</span>
+            <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Datrix</span>
           </span>
         </a>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex items-center lg:space-x-4 xl:space-x-8">
+        <nav class="hidden lg:flex items-center lg:space-x-2.5 xl:space-x-8 text-sm">
           <a href="index.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 1</a>
           <a href="home2.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Home 2</a>
           <a href="about.html" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">About</a>
@@ -85,7 +114,7 @@
         </nav>
 
         <!-- Controls & CTA Button -->
-        <div class="hidden lg:flex items-center space-x-4">
+        <div class="hidden lg:flex items-center lg:space-x-2.5 xl:space-x-4">
           <!-- RTL Toggle -->
           <button id="rtl-toggle" class="w-10 h-10 rounded-lg border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-xs font-bold font-display uppercase tracking-wider text-gray-300 hover:text-white transition-colors flex items-center justify-center flex-shrink-0" title="Toggle RTL/LTR">
             <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
@@ -97,7 +126,7 @@
             <i data-lucide="moon" class="w-4 h-4 theme-icon-moon hidden"></i>
           </button>
 
-          <a href="quote.html" class="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-600 hover:to-indigo-600 text-white font-semibold text-sm rounded-lg shadow-md shadow-cyan-900/30 transition-all hover:-translate-y-0.5">
+          <a href="quote.html" class="lg:px-4 xl:px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-600 hover:to-indigo-600 text-white font-semibold text-sm rounded-lg shadow-md shadow-cyan-900/30 transition-all hover:-translate-y-0.5 whitespace-nowrap">
             Get Project Quote
           </a>
         </div>
@@ -485,11 +514,40 @@
         <!-- Brand -->
         <div class="lg:col-span-2">
           <a href="index.html" class="flex items-center space-x-2 mb-6 group">
-            <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-              <i data-lucide="database" class="w-5 h-5 text-white"></i>
+            <div class="relative w-10 h-10 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+              <!-- Outer Glow Aura -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-indigo-500 rounded-xl blur-md opacity-40 group-hover:opacity-75 group-hover:blur-lg transition-all duration-300"></div>
+              <!-- Custom Isometric Pipeline SVG -->
+              <svg class="relative w-9 h-9 transition-transform duration-500 group-hover:rotate-[15deg]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="grad-cyan-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#22d3ee" />
+                    <stop offset="100%" stop-color="#0891b2" />
+                  </linearGradient>
+                  <linearGradient id="grad-indigo-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#818cf8" />
+                    <stop offset="100%" stop-color="#4f46e5" />
+                  </linearGradient>
+                  <linearGradient id="grad-blue-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#60a5fa" />
+                    <stop offset="100%" stop-color="#2563eb" />
+                  </linearGradient>
+                </defs>
+                <path d="M25 25 L50 15 L75 25 L75 55 L50 75 L25 55 Z" stroke="url(#grad-indigo-footer)" stroke-width="4" stroke-linejoin="round" opacity="0.4"/>
+                <path d="M25 25 L50 40 L75 25" stroke="url(#grad-cyan-footer)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M50 40 L50 75" stroke="url(#grad-blue-footer)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M25 55 L50 40 L75 55" stroke="url(#grad-indigo-footer)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="25" cy="25" r="5.5" fill="#22d3ee"/>
+                <circle cx="50" cy="15" r="4.5" fill="#818cf8"/>
+                <circle cx="75" cy="25" r="5.5" fill="#22d3ee"/>
+                <circle cx="75" cy="55" r="4.5" fill="#60a5fa"/>
+                <circle cx="50" cy="75" r="6" fill="#818cf8"/>
+                <circle cx="25" cy="55" r="4.5" fill="#60a5fa"/>
+                <circle cx="50" cy="40" r="7.5" fill="#ffffff" stroke="url(#grad-cyan-footer)" stroke-width="2.5"/>
+              </svg>
             </div>
             <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">
-              <span class="text-cyan-400">Datrix</span>
+              <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Datrix</span>
             </span>
           </a>
           <p class="text-sm leading-relaxed mb-6 max-w-sm">
@@ -498,7 +556,9 @@
           <div class="flex space-x-4">
             <a href="https://github.com" target="_blank" class="hover:text-white transition-colors" aria-label="GitHub"><i data-lucide="github" class="w-5 h-5"></i></a>
             <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-            <a href="https://twitter.com" target="_blank" class="hover:text-white transition-colors" aria-label="Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+            <a href="https://twitter.com" target="_blank" class="hover:text-white transition-colors" aria-label="Twitter/X">
+              <svg class="w-5 h-5 inline-block" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
           </div>
         </div>
 

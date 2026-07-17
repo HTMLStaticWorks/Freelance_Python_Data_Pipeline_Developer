@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="grad-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#0891b2" />
+    </linearGradient>
+    <linearGradient id="grad-indigo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+  </defs>
+  <path d="M25 25 L50 15 L75 25 L75 55 L50 75 L25 55 Z" stroke="url(#grad-indigo)" stroke-width="4" stroke-linejoin="round" opacity="0.4"/>
+  <path d="M25 25 L50 40 L75 25" stroke="url(#grad-cyan)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 40 L50 75" stroke="url(#grad-blue)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25 55 L50 40 L75 55" stroke="url(#grad-indigo)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+  <circle cx="25" cy="25" r="5.5" fill="#22d3ee"/>
+  <circle cx="50" cy="15" r="4.5" fill="#818cf8"/>
+  <circle cx="75" cy="25" r="5.5" fill="#22d3ee"/>
+  <circle cx="75" cy="55" r="4.5" fill="#60a5fa"/>
+  <circle cx="50" cy="75" r="6" fill="#818cf8"/>
+  <circle cx="25" cy="55" r="4.5" fill="#60a5fa"/>
+  <circle cx="50" cy="40" r="7.5" fill="#ffffff" stroke="url(#grad-cyan)" stroke-width="2.5"/>
+</svg>
