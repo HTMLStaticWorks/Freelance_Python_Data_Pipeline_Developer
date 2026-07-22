@@ -392,6 +392,11 @@ html:not(.dark) ::-webkit-scrollbar-thumb:hover {
   margin-left: 0 !important;
 }
 
+[dir="rtl"] .space-x-2.5 > :not([hidden]) ~ :not([hidden]) {
+  margin-right: 0.625rem !important;
+  margin-left: 0 !important;
+}
+
 [dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   margin-right: 0.5rem !important;
   margin-left: 0 !important;
@@ -404,6 +409,21 @@ html:not(.dark) ::-webkit-scrollbar-thumb:hover {
 
 [dir="rtl"] .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
   margin-right: 2rem !important;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .lg\:space-x-2\.5 > :not([hidden]) ~ :not([hidden]) {
+  margin-right: 0.625rem !important;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .xl\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  margin-right: 2rem !important;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .xl\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-right: 1rem !important;
   margin-left: 0 !important;
 }
 
